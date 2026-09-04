@@ -76,7 +76,7 @@
   .btn-solid:hover,.btn-solid:focus-visible{background:var(--red-deep);border-color:var(--red-deep)}
 
   .frame{border:1px solid var(--line); background:var(--surface-2); overflow:hidden}
-  .frame img{width:100%; height:100%; object-fit:cover}
+  .frame img{width:100%; height:100%; object-fit:contain}
 
   /* ---------- hero ---------- */
   .hero{
@@ -161,7 +161,7 @@
   .domains{display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:34px}
   .domain{border:1px solid var(--line); background:var(--surface); display:flex; flex-direction:column}
   .domain .shot{aspect-ratio:16/9; border-bottom:1px solid var(--line); overflow:hidden; background:var(--surface-2)}
-  .domain .shot img{width:100%;height:100%;object-fit:cover}
+  .domain .shot img{width:100%;height:100%;object-fit:contain}
   .domain-body{padding:26px 26px 28px; display:flex; flex-direction:column; gap:14px; flex:1}
   .domain h3{
     font-family:var(--display); font-weight:800; text-transform:uppercase;
