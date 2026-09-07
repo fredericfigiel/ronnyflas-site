@@ -1,93 +1,93 @@
-# Page: /food-business-career/
 meta:
-  title: "Food Business - Ronny Flas | Belgian chocolate & coffee"
-  description: "Food companies in Belgium, Luxembourg, Germany, Romania and Russia, with own coffee and chocolate factories. Clients include Edeka, Carrefour, Auchan, Delhaize and Metro."
-
+  title: Food Business - Ronny Flas | Belgian chocolate & coffee
+  description: Food companies in Belgium, Luxembourg, Germany, Romania and Russia,
+    with own coffee and chocolate factories. Clients include Edeka, Carrefour,
+    Auchan, Delhaize and Metro.
 pagehead:
-  eyebrow: "Belgium · Luxembourg · Germany · Romania · Russia"
-  title: "Food<br>Business"
-  lede: "Owner of several companies in the food business. Owner of his own coffee and chocolate factories."
-  photo: "/assets/img/dee777_cfc050b51c7f754444c4071dd41f7258.png"
-  photo_alt: "Food business"
-  photo_style: "object-fit:contain;background:var(--surface-2)"
-
+  eyebrow: Belgium · Luxembourg · Germany · Romania · Russia
+  title: Food<br>Business
+  lede: Owner of several companies in the food business. Owner of his own coffee
+    and chocolate factories.
+  photo: /assets/img/dee777_cfc050b51c7f754444c4071dd41f7258.png
+  photo_alt: Food business
+  photo_style: object-fit:contain;background:var(--surface-2)
 specialities:
-  eyebrow: "Specialities"
-  heading: "What we make"
+  eyebrow: Specialities
+  heading: What we make
   items:
-    - k: "Chocolate"
-      v: "Belgian"
-    - k: "Wine"
-      v: "Still"
-    - k: "Sparkling"
-      v: "Wine"
-    - k: "Coffee"
-      v: "Own factory"
-    - k: "Confec-<br>tionary"
-      v: "Sweets"
+    - k: COFFEE
+      v: Beans, Ground, Pads, Capsules, Instant,...
+    - k: MADE IN BELGIUM CHOCOLATE
+      v: Truffles, pralines, chocolate, nougat, pastries,...
+    - k: HOT BEVERAGES
+      v: Latte, Cappuccino, Tea, Hot chocolate, Specialities,...
+    - k: COLD BEVERAGES
+      v: Sparkling wine, Wine, Cocktails, Soft drinks, Healthy drinks
+    - k: Sport Food & Drink
+      v: Proteins, Ginger drinks, collagen, ...
   companies:
-    - label: "www.flaronis.com"
-      href: "https://www.flaronis.com"
-    - label: "www.retaxa.com"
-      href: "https://www.retaxa.com"
-  news_button_text: "Check out our “Business Food” news"
-  news_button_href: "/food-business-news/"
-
+    - label: www.flaronis.com
+      href: https://www.flaronis.com
+    - label: www.retaxa.com
+      href: https://www.retaxa.com
+  news_button_text: Check out our “Business Food” news
+  news_button_href: /food-business-news/
 products:
-  eyebrow: "A few of our ranges"
-  heading: "Our products"
+  eyebrow: A few of our ranges
+  heading: Our products
   photos:
-    - file: "/assets/img/dee777_93378e2cf2e6f3efb001713381805282.jpg"
-      alt: "Belgian chocolate truffles"
-    - file: "/assets/img/dee777_af927b6f8e5cc162d0516d02cd2f4d7e.jpg"
-      alt: "Belgian chocolate truffles"
-    - file: "/assets/img/dee777_c871d7ab37e9a534b682eb3e1912a6f7.jpg"
-      alt: "Belgian chocolate truffles"
-    - file: "/assets/img/dee777_b58617211ea51b25c8b9a25adb16b986.jpg"
-      alt: "Coffee"
-    - file: "/assets/img/dee777_61293fd798f76cc1d4f5d64ce4a8424a.jpg"
-      alt: "Coffee"
-    - file: "/assets/img/dee777_b87f3381f5a87d556ca03eb4be5fc476.jpg"
-      alt: "Coffee"
-    - file: "/assets/img/dee777_e5940a65ee8f015b296d93c5793120c2.jpg"
-      alt: "Wine"
-    - file: "/assets/img/dee777_f92153f6da0d5e0ae2b45d1734ae4b7b.jpg"
-      alt: "Wine"
-    - file: "/assets/img/dee777_38260d726e4ee55435fe65255264ce70.jpg"
-      alt: "Wine"
-  retaxa_photo: "/assets/img/dee777_d11db518ee296ac2b80c217d8f86886a.jpg"
-  retaxa_alt: "Retaxa"
-
+    - file: /assets/img/1194-truffes_cacao_2017.jpg
+      alt: Belgian chocolate truffles
+    - file: /assets/img/1195-truffes_cappuccino_2017.jpg
+      alt: Belgian chocolate truffles
+    - file: /assets/img/1196-truffes_champagne_2017.jpg
+      alt: Belgian chocolate truffles
+    - file: /assets/img/4700-bingo_maxi_crema_1kg-itm.jpg
+      alt: Coffee
+    - file: /assets/img/6181-vida_nova_peru_1kg-klein.jpg
+      alt: Coffee
+    - file: /assets/img/535-royal-creme-1kg-dlg.jpg
+      alt: Coffee
+    - file: /assets/img/498n-casa-colon-100-pads-strong-klein.jpg
+      alt: Coffee Pads
+    - file: /assets/img/bingo_108pads_strong_2023.jpg
+      alt: Coffee Pads
+    - file: /assets/img/7012-casa_colon_capsulers_dolce_gusto_caffe_latte-klein.jpg
+      alt: Dolce Gusto compatible capsules
+  retaxa_photo: /assets/img/438-vida-nova-bio-transfair-100g-löslich.jpg
+  retaxa_alt: Instant Coffee
 clients:
-  eyebrow: "In the Benelux, Germany, France, Russia, Romania, Estonia, Poland, South-America…"
-  heading: "Our clients"
+  eyebrow: In Belgium, Luxembourg, The Netherlands, Germany, France, Russia,
+    Romania, Estonia, Poland, Mongolia, Cameroun, South-America…
+  heading: Our clients
   retail_chips:
-    - "Edeka"
-    - "Carrefour"
-    - "Auchan"
-    - "Cactus"
-    - "Delhaize"
-    - "Match"
-    - "Smatch"
-    - "Intermarché"
-    - "Cora"
-    - "Super U"
-    - "X5"
-    - "Magnit"
-    - "Lenta"
-    - "Metro"
-  retail_note: "Edeka — biggest distribution group in Europe: 12 000 stores, 253 000 employees, 42 billion € turnover."
+    - "Edeka - Biggest distribution group in Europe: 12 000 stores, 253 000
+      employees, 42 billion € turnover."
+    - Carrefour
+    - Auchan
+    - Cactus
+    - Delhaize
+    - Intermarché
+    - Super U
+    - X5
+    - Magnit
+    - Lenta
+    - Metro
+    - "AND MANY OTHERS... "
+  retail_note: ""
   wholesaler_chips:
-    - "Fixmer"
-    - "Trendy Foods"
+    - Fixmer
+    - Trendy Foods
+    - AND MANY OTHERS...
   gas_station_chips:
-    - "Shell"
-    - "Total"
-    - "Aral"
-    - "Esso"
-    - "Q8"
-    - "Texaco"
+    - Shell
+    - Total
+    - Aral
+    - Esso
+    - Q8
+    - Texaco
+    - AND MANY OTHERS...
   independant_items:
-    - "Independant stores and franchises"
-    - "Hotels, bars, restaurants"
-    - "Administrations"
+    - Independant stores and franchises
+    - Hotels, bars, restaurants
+    - Administrations
