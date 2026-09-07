@@ -1,76 +1,75 @@
-# Page: /music/
 meta:
-  title: "Music - Ronny Flas | TSP Records"
-  description: "Ronny Flas is a producer, manager and publisher: international record deals with EMI, Sony, Warner and Universal, recording studio owner, artists produced and signed worldwide."
-
+  title: Music - Ronny Flas | TSP Records
+  description: "Ronny Flas is a producer, manager and publisher: international
+    record deals with EMI, Sony, Warner and Universal, recording studio owner,
+    artists produced and signed worldwide."
 pagehead:
-  eyebrow: "Music industry professional"
-  title: "Music"
-  lede: "Producer · Manager · Publisher"
-
+  eyebrow: Producer · Manager · Publisher · Recording Studio Owner
+  title: Music
+  lede: 30+ years experience
 photos: []
-
+numbers:
+  eyebrow: "-"
+  heading: "-"
 deals:
-  eyebrow: "Worldwide"
-  heading: "International record deals"
-  key: "Record deals signed with"
+  eyebrow: Worldwide
+  heading: International record deals
+  key: Record deals signed with
   chips:
-    - "EMI International"
-    - "Sony Music International"
-    - "Warner Music International"
-    - "Universal Music International"
-    - "Capitol (World)"
-    - "AZ (Universal France)"
-    - "NRJ Music (France)"
-    - "Trema (France)"
-    - "Edel (Germany)"
-    - "Rotana (Middle East)"
-    - "V2 (France)"
-    - "Prossima (South Korea)"
-    - "Scorpio Music (France)"
-    - "EAMS (Germany/Switzerland/Austria)"
-  wide_extra: "and many others…"
-
+    - EMI International
+    - Sony Music International
+    - Warner Music International
+    - Universal Music International
+    - Capitol (World)
+    - AZ (Universal France)
+    - NRJ Music (France)
+    - Trema (France)
+    - Edel (Germany)
+    - Rotana (Middle East)
+    - V2 (France)
+    - Prossima (South Korea)
+    - Scorpio Music (France)
+    - EAMS (Germany/Switzerland/Austria)
+  wide_extra: and many others…
 studios:
-  eyebrow: "Recording"
-  heading: "Recording studio owner"
-  lede: "Ronny Flas is a recording studio owner, and also recorded in the biggest studios."
-  key: "Studios"
+  eyebrow: Recording
+  heading: Recording studio owner
+  lede: Ronny Flas is a recording studio owner, and also recorded in the biggest
+    studios.
+  key: Studios
   chips:
-    - "Metropolis (London)"
-    - "Sound City (Los Angeles)"
-    - "Gemini (Los Angeles)"
-    - "ICP Studio (Brussels)"
-    - "Le Labo Records (Paris — Quentin Bachelet)"
-    - "Galaxy Studio (Belgium)"
-  wide_extra: "and many others…"
-
+    - Metropolis (London)
+    - Sound City (Los Angeles)
+    - Gemini (Los Angeles)
+    - ICP Studio (Brussels)
+    - Le Labo Records (Paris — Quentin Bachelet)
+    - Galaxy Studio (Belgium)
+  wide_extra: and many others…
 fairs:
-  eyebrow: "International music fair"
-  heading: "Worldwide fairs"
-  key: "Music fairs"
+  eyebrow: International music fair
+  heading: Worldwide fairs
+  key: Music fairs
   chips:
-    - "MIDEM (Cannes — France)"
-    - "MIDEM (Miami)"
-    - "MIDEM Hong Kong"
-    - "MUSEXPO Los Angeles"
-  wide_extra: "and many others…"
-
+    - MIDEM (Cannes — France)
+    - MIDEM (Miami)
+    - MIDEM Hong Kong
+    - MUSEXPO Los Angeles
+  wide_extra: and many others…
 artists:
-  eyebrow: "Artists produced — signed in many countries"
-  heading: "Number 1 and numerous top 10"
-  key: "Countries"
+  eyebrow: Artists produced — signed in many countries
+  heading: Number 1 and numerous top 10
+  key: Countries
   chips:
-    - "Belgium"
-    - "France"
-    - "Spain"
-    - "Morocco"
-    - "The Netherlands"
-    - "Congo"
-    - "USA"
-  wide_extra: "and many others…"
+    - Belgium
+    - France
+    - Spain
+    - Morocco
+    - The Netherlands
+    - Congo
+    - USA
+  wide_extra: and many others…
   buttons:
-    - text: "Music news"
-      href: "/music-news/"
-    - text: "Music consulting"
-      href: "/music-consulting/"
+    - text: Music news
+      href: /music-news/
+    - text: Music consulting
+      href: /music-consulting/
