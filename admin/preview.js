@@ -141,6 +141,19 @@
     );
   }
 
+  /** Mirrors build.py's youtube_embed() - any pasted YouTube URL shape. */
+  var YOUTUBE_ID_RE = /(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([A-Za-z0-9_-]{6,})/;
+  function youtubeEmbed(url) {
+    if (!url) return "";
+    var m = YOUTUBE_ID_RE.exec(url);
+    if (!m) return "";
+    return (
+      '\n    <div class="video-embed">\n      <iframe src="https://www.youtube.com/embed/' +
+      m[1] +
+      '" title="Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" loading="lazy" allowfullscreen></iframe>\n    </div>'
+    );
+  }
+
   /** Mirrors build.py's pagehead() helper. */
   function pageheadHtml(eyebrow, title, lede, imgSrc, imgAlt, imgStyle) {
     var imgAttr = imgStyle ? ' style="' + imgStyle + '"' : "";
@@ -362,6 +375,7 @@
 
     var recordSpecs = (record.specs || []).map(specBlock).join("\n");
     var coachingSpecs = (coaching.specs || []).map(specBlock).join("\n");
+    var coachingVideo = youtubeEmbed(coaching.video_url);
     var photos = (gallery.photos || [])
       .map(function (p) {
         return (
@@ -394,7 +408,9 @@
       (coaching.heading || "") +
       '</h2>\n    <div class="specs">\n' +
       coachingSpecs +
-      '\n    </div>\n  </div>\n</section>\n\n<section>\n  <div class="wrap">\n    <p class="eyebrow">' +
+      "\n    </div>" +
+      coachingVideo +
+      '\n  </div>\n</section>\n\n<section>\n  <div class="wrap">\n    <p class="eyebrow">' +
       (gallery.eyebrow || "") +
       "</p>\n    <h2>" +
       (gallery.heading || "") +

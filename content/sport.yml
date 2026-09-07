@@ -28,13 +28,13 @@ record:
                   </ul>
     - key: Karate full contact
       sub: Black belt 3rd degree
-      body_html: "<p>First Karate teacher: Salvatore Scarlata.</p>"
+      body_html: "<ul><li>First Karate teacher: Salvatore Scarlata.</li></ul>"
     - key: Kick boxing
       sub: World champion
-      body_html: <p>ISKA World Champion.</p>
+      body_html: <ul><li>ISKA World Champion.</li></ul>
     - key: Thai boxing
       sub: World champion
-      body_html: <p>ISKA World Champion. Muay Thai pioneer in Belgium.</p>
+      body_html: <ul><li>ISKA World Champion. Muay Thai pioneer in Belgium.</li></ul>
 coaching:
   eyebrow: Coaching
   heading: Trainer & promoter
@@ -45,8 +45,8 @@ coaching:
         champions</li></ul>
     - key: Promoter
       sub: ""
-      body_html: <p>Promoter of the first biggest international event of Muay Thai in
-        Belgium.</p>
+      body_html: <ul><li>Promoter of the first biggest international event of Muay
+        Thai in Belgium.</li></ul>
     - key: Personal trainer for
       sub: ""
       body_html: <ul class="chips"><li>VIP's & celebrities</li><li>Belgian
@@ -59,6 +59,7 @@ coaching:
       sub: ""
       body_html: <ul><li>Trainer for actor</li><li>Fight choreographer</li><li>Actor
         in “Desert Kickboxer” (1992)</li></ul>
+  video_url: https://www.youtube.com/watch?v=wrXeVU0pgdE
 gallery:
   eyebrow: Gallery
   heading: Karate · Wing Chun · Ring

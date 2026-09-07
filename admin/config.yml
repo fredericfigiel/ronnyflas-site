@@ -285,6 +285,11 @@ collections:
           widget: markdown
           modes: [rich_text]
           buttons: [bold, italic, link, bulleted-list]
+      - label: Vidéo (optionnel, affichée sous "Film industry")
+        name: video_url
+        widget: string
+        required: false
+        hint: 'Collez un lien YouTube, ex: https://www.youtube.com/watch?v=xxxxx'
     - label: Galerie photos
       name: gallery
       widget: object
