@@ -45,6 +45,7 @@ collections:
       - label: Rôles / liens (Sportsman, Music producer, etc.)
         name: roles
         widget: list
+        summary: '{{fields.title}}'
         fields:
         - label: Titre
           name: title
@@ -99,6 +100,8 @@ collections:
       - label: Les 4 cartes
         name: domains
         widget: list
+        summary: '{{fields.title}}'
+        collapsed: true
         fields:
         - label: Photo
           name: photo
@@ -142,6 +145,7 @@ collections:
       - label: Chiffres
         name: items
         widget: list
+        summary: '{{fields.k}} — {{fields.v}}'
         fields:
         - label: 'Valeur courte (ex: ISKA, 4, 5)'
           name: k
@@ -226,6 +230,7 @@ collections:
       - label: Disciplines
         name: specs
         widget: list
+        summary: '{{fields.key}}'
         fields:
         - label: Nom
           name: key
@@ -256,6 +261,7 @@ collections:
       - label: Blocs
         name: specs
         widget: list
+        summary: '{{fields.key}}'
         fields:
         - label: Nom
           name: key
@@ -281,6 +287,8 @@ collections:
       - label: Photos
         name: photos
         widget: list
+        summary: '{{fields.caption}}'
+        collapsed: true
         fields:
         - label: Photo
           name: file
@@ -350,6 +358,7 @@ collections:
       - label: Chiffres
         name: items
         widget: list
+        summary: '{{fields.k}} — {{fields.v}}'
         fields:
         - label: Valeur courte
           name: k
@@ -456,6 +465,7 @@ collections:
       - label: Boutons
         name: buttons
         widget: list
+        summary: '{{fields.text}}'
         fields:
         - label: Texte
           name: text
@@ -513,6 +523,7 @@ collections:
       - label: Vignettes
         name: items
         widget: list
+        summary: '{{fields.k}} — {{fields.v}}'
         fields:
         - label: Valeur courte
           name: k
@@ -524,6 +535,7 @@ collections:
       - label: Sociétés (liens)
         name: companies
         widget: list
+        summary: '{{fields.label}}'
         fields:
         - label: Nom affiché
           name: label
@@ -551,6 +563,8 @@ collections:
       - label: Photos produits
         name: photos
         widget: list
+        summary: '{{fields.alt}}'
+        collapsed: true
         fields:
         - label: Photo
           name: file
@@ -692,6 +706,7 @@ collections:
     - label: Liens vers les 5 rubriques
       name: links
       widget: list
+      summary: '{{fields.text}}'
       fields:
       - label: Texte
         name: text
@@ -788,6 +803,8 @@ collections:
     - label: Actualités (une entrée = un encart)
       name: items
       widget: list
+      summary: '{{fields.item | truncate(70)}}'
+      collapsed: true
       field:
         label: Actualité
         name: item
@@ -857,6 +874,8 @@ collections:
     - label: Actualités (une entrée = un encart)
       name: items
       widget: list
+      summary: '{{fields.item | truncate(70)}}'
+      collapsed: true
       field:
         label: Actualité
         name: item
@@ -926,6 +945,8 @@ collections:
     - label: Actualités (une entrée = un encart)
       name: items
       widget: list
+      summary: '{{fields.item | truncate(70)}}'
+      collapsed: true
       field:
         label: Actualité
         name: item
@@ -996,6 +1017,8 @@ collections:
     - label: 'Alertes en haut de page (ex: Bibi, Leo)'
       name: alerts
       widget: list
+      summary: '{{fields.title}}'
+      collapsed: true
       fields:
       - label: Photo
         name: photo
@@ -1025,6 +1048,8 @@ collections:
       - label: Causes
         name: causes
         widget: list
+        summary: '{{fields.key}}'
+        collapsed: true
         fields:
         - label: Nom
           name: key
@@ -1069,6 +1094,8 @@ collections:
       - label: Causes
         name: causes
         widget: list
+        summary: '{{fields.key}}'
+        collapsed: true
         fields:
         - label: Nom
           name: key
@@ -1113,6 +1140,7 @@ collections:
       - label: Photos
         name: photos
         widget: list
+        summary: '{{fields.alt}}'
         fields:
         - label: Photo
           name: file
@@ -1123,6 +1151,8 @@ collections:
       - label: Causes
         name: causes
         widget: list
+        summary: '{{fields.key}}'
+        collapsed: true
         fields:
         - label: Nom
           name: key
@@ -1167,6 +1197,8 @@ collections:
       - label: Logos
         name: logos
         widget: list
+        summary: '{{fields.alt}}'
+        collapsed: true
         fields:
         - label: Logo
           name: file
@@ -1242,6 +1274,8 @@ collections:
       - label: Offres
         name: positions
         widget: list
+        summary: '{{fields.title}}'
+        collapsed: true
         fields:
         - label: Titre du poste
           name: title
@@ -1318,6 +1352,8 @@ collections:
     - label: Photos
       name: pictures
       widget: list
+      summary: '{{fields.title}}'
+      collapsed: true
       fields:
       - label: Photo
         name: file

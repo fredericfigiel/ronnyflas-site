@@ -8,5 +8,8 @@
 <body>
   <!-- Ceci charge Decap CMS, l'interface d'administration du site. -->
   <script src="https://unpkg.com/decap-cms@^3/dist/decap-cms.js"></script>
+  <!-- Aperçu en direct (personnalisé pour nos pages) - doit être chargé après
+       decap-cms.js ci-dessus, une fois que window.CMS existe. -->
+  <script src="/admin/preview.js"></script>
 </body>
 </html>
