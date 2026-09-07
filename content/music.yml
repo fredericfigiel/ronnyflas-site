@@ -46,7 +46,11 @@ studios:
     - Le Labo Records (Paris — Quentin Bachelet)
     - Galaxy Studio (Belgium)
   wide_extra: and many others…
-  photos: []
+  photos:
+    - photo: /assets/img/9554a240-ad3b-4281-b2dc-595412d4808a-.png
+      photo_alt: Ronny Flas and Silva mixing
+    - photo: /assets/img/23f602bf-5057-42a4-ad81-65f009950394-.png
+      photo_alt: SOS Recording Studio
 fairs:
   eyebrow: International music fair
   heading: Worldwide fairs
@@ -57,7 +61,9 @@ fairs:
     - MIDEM Hong Kong
     - MUSEXPO Los Angeles
   wide_extra: and many others…
-  photos: []
+  photos:
+    - photo: /assets/img/845b4448-3a64-48a3-a11a-3550c4fffaf0-.png
+      photo_alt: Ronny Flas and Shaggy at MIDEM MIAMI
 artists:
   eyebrow: Artists produced — signed in many countries
   heading: Number 1 and numerous top 10
