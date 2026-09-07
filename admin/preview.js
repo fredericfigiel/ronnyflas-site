@@ -25,14 +25,29 @@
   var h = window.h;
 
   // ---------------------------------------------------------------------
+  // Le site est actuellement publié sous un sous-dossier GitHub Pages
+  // (https://fredericfigiel.github.io/ronnyflas-site/), pas à la racine du
+  // domaine - donc un chemin qui commence par "/" (ex: "/assets/img/x.jpg")
+  // pointerait à tort vers la racine de github.io. `asset()` recalcule le
+  // bon préfixe à partir de l'URL actuelle de /admin/, ce qui reste correct
+  // aussi le jour où le site passera sur www.ronnyflas.com (racine du
+  // domaine -> SITE_ROOT vaut alors simplement "/").
+  // ---------------------------------------------------------------------
+  var SITE_ROOT = location.pathname.replace(/admin\/.*$/, "");
+  function asset(p) {
+    p = p || "";
+    if (!p || /^https?:\/\//.test(p)) return p;
+    return SITE_ROOT + p.replace(/^\//, "");
+  }
+
+  // ---------------------------------------------------------------------
   // Feuilles de style réelles du site (mêmes URLs que scripts/build.py
-  // head()). /admin/ et /assets/ sont servis depuis la même origine
-  // GitHub Pages, donc un chemin relatif à la racine fonctionne tel quel.
+  // head()).
   // ---------------------------------------------------------------------
   CMS.registerPreviewStyle(
     "https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800&family=Barlow:wght@400;500;600&display=swap"
   );
-  CMS.registerPreviewStyle("/assets/css/main.css");
+  CMS.registerPreviewStyle(asset("/assets/css/main.css"));
   CMS.registerPreviewStyle(
     ".preview-topbar{background:#111;color:#fff;padding:14px 20px;font-family:'Big Shoulders Display',sans-serif;" +
       "font-weight:700;font-size:20px;letter-spacing:.02em}" +
@@ -82,7 +97,7 @@
     title = title || "Gallery";
     var figures = filenames
       .map(function (f) {
-        return '<figure><img loading="lazy" src="' + (f || "") + '" alt=""></figure>';
+        return '<figure><img loading="lazy" src="' + asset(f) + '" alt=""></figure>';
       })
       .join("\n");
     return (
@@ -101,7 +116,7 @@
     var imgAttr = imgStyle ? ' style="' + imgStyle + '"' : "";
     var imgHtml = imgSrc
       ? '<div class="frame"><img loading="lazy" src="' +
-        imgSrc +
+        asset(imgSrc) +
         '" alt="' +
         (imgAlt || "") +
         '"' +
@@ -174,7 +189,7 @@
         var facts = (x.facts || []).map(function (f) { return "<li>" + f + "</li>"; }).join("\n");
         return (
           '<article class="domain"><div class="shot"><img loading="lazy" src="' +
-          (x.photo || "") +
+          asset(x.photo) +
           '" alt="' +
           (x.photo_alt || "") +
           '"' +
@@ -206,7 +221,7 @@
       '</p>\n      <ul class="roles">\n' +
       roles +
       '\n      </ul>\n    </div>\n    <div class="frame hero-photo">\n      <img src="' +
-      (hero.photo || "") +
+      asset(hero.photo) +
       '" alt="' +
       (hero.photo_alt || "") +
       '">\n    </div>\n  </div>\n</header>\n\n<section class="alerts">\n  <div class="wrap">\n    <div class="alerts-head">\n      <p class="eyebrow" style="margin:0">' +
@@ -285,7 +300,7 @@
       .map(function (p) {
         return (
           '<figure><img loading="lazy" src="' +
-          (p.file || "") +
+          asset(p.file) +
           '" alt="' +
           (p.alt || "") +
           '"><figcaption>' +
@@ -449,7 +464,7 @@
       .join("\n");
     var productPhotos = (products.photos || [])
       .map(function (p) {
-        return '<figure><img loading="lazy" src="' + (p.file || "") + '" alt="' + (p.alt || "") + '"></figure>';
+        return '<figure><img loading="lazy" src="' + asset(p.file) + '" alt="' + (p.alt || "") + '"></figure>';
       })
       .join("\n");
     var retailChips = (clients.retail_chips || []).map(function (c) { return "<li>" + c + "</li>"; }).join("\n");
@@ -467,7 +482,7 @@
       '</h1>\n      <p class="lede">' +
       (ph.lede || "") +
       '</p>\n    </div>\n    <div class="frame"><img loading="lazy" src="' +
-      (ph.photo || "") +
+      asset(ph.photo) +
       '" alt="' +
       (ph.photo_alt || "") +
       '"' +
@@ -491,7 +506,7 @@
       '</h2>\n    <div class="gallery">\n' +
       productPhotos +
       '\n    </div>\n    <div class="frame" style="max-width:220px; aspect-ratio:1007/541; margin-top:14px; background:#000">\n      <img loading="lazy" src="' +
-      (products.retaxa_photo || "") +
+      asset(products.retaxa_photo) +
       '" alt="' +
       (products.retaxa_alt || "") +
       '" style="width:100%;height:100%;object-fit:contain">\n    </div>\n  </div>\n</section>\n\n<section class="alerts">\n  <div class="wrap">\n    <p class="eyebrow">' +
@@ -653,7 +668,7 @@
   function photoImg(src, alt) {
     return (
       '<img loading="lazy" src="' +
-      (src || "") +
+      asset(src) +
       '" alt="' +
       (alt || "") +
       '" style="display:block;max-width:220px;max-height:280px;width:auto;height:auto;margin-bottom:12px;border:1px solid var(--line)">'
@@ -662,7 +677,7 @@
   function logoImg(src, alt) {
     return (
       '<img loading="lazy" src="' +
-      (src || "") +
+      asset(src) +
       '" alt="' +
       (alt || "") +
       '" style="max-width:130px;display:block;margin-bottom:12px;background:#fff;padding:6px;border:1px solid var(--line)">'
@@ -671,7 +686,7 @@
   function smiletrainImg(src, alt) {
     return (
       '<img loading="lazy" src="' +
-      (src || "") +
+      asset(src) +
       '" alt="' +
       (alt || "") +
       '" style="display:block;max-width:420px;width:100%;height:auto;margin-bottom:12px;border:1px solid var(--line)">'
@@ -723,13 +738,13 @@
     var supportsSpecs = (supports.causes || []).map(causeSpec).join("\n");
     var insectPhotos = (insects.photos || [])
       .map(function (p) {
-        return '<figure><img loading="lazy" src="' + (p.file || "") + '" alt="' + (p.alt || "") + '"></figure>';
+        return '<figure><img loading="lazy" src="' + asset(p.file) + '" alt="' + (p.alt || "") + '"></figure>';
       })
       .join("\n");
     var insectSpecs = (insects.causes || []).map(causeSpec).join("\n");
     var logos = (organisations.logos || [])
       .map(function (l) {
-        return '<div><img loading="lazy" src="' + (l.file || "") + '" alt="' + (l.alt || "") + '"></div>';
+        return '<div><img loading="lazy" src="' + asset(l.file) + '" alt="' + (l.alt || "") + '"></div>';
       })
       .join("\n");
 
@@ -862,7 +877,7 @@
       var t = esc(p.title || "");
       var cap = "<strong>" + t + "</strong>";
       if (p.desc) cap += " &mdash; " + esc(p.desc);
-      return '<figure><img loading="lazy" src="' + (p.file || "") + '" alt="' + t + '"><figcaption>' + cap + "</figcaption></figure>";
+      return '<figure><img loading="lazy" src="' + asset(p.file) + '" alt="' + t + '"><figcaption>' + cap + "</figcaption></figure>";
     });
     return '<div class="gallery" style="grid-template-columns:repeat(3,1fr)">\n' + out.join("\n") + "\n</div>";
   }
