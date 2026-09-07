@@ -12,6 +12,7 @@ import html
 import os
 import re
 
+import markdown
 import yaml
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -174,6 +175,39 @@ def feed_html(items):
     return '<div class="newsfeed">\n' + "\n".join(out) + "\n</div>"
 
 
+# ---------------------------------------------------------------------------
+# Markdown rendering for the fields the Decap `markdown` widget now edits
+# (see admin/config.yml). Those fields still hold the same raw HTML this
+# site has always used for the handful of `<br>`/`<a>`/`<ul><li>`/`<strong>`
+# tags they need - Python-Markdown passes inline/block raw HTML straight
+# through unchanged, so existing content keeps rendering exactly as before;
+# new content the site owner formats with the CMS's bold/italic/link/list
+# toolbar renders through normal Markdown syntax.
+# ---------------------------------------------------------------------------
+def md(text, inline=False):
+    """Renders a markdown-widget field to HTML.
+
+    `inline=True` is for fields interpolated inside a context the call site
+    already wraps in its own inline/heading element (a `<span>`, `<h1>`,
+    `<div class="v">`/`<div class="k">`, or a `<p>` the call site itself
+    provides) rather than a block container meant to hold `<p>`/`<ul>`
+    children. Markdown always wraps a plain-text paragraph in `<p>...</p>`
+    (raw HTML blocks like an existing `<ul>...</ul>` pass through as-is
+    instead) - for `inline` fields that outer `<p>` would either break the
+    layout or add a wrapper the original HTML never had, so when the
+    rendered output is exactly one `<p>...</p>` with no nested block inside
+    it, that single wrapper is stripped before returning.
+    """
+    if not text:
+        return ""
+    rendered = markdown.markdown(text).strip()
+    if inline and rendered.startswith("<p>") and rendered.endswith("</p>"):
+        inner = rendered[len("<p>"):-len("</p>")]
+        if "<p>" not in inner and "<p " not in inner:
+            rendered = inner
+    return rendered
+
+
 def IMG(path):
     """Content YAML stores full '/assets/img/...' paths (so Decap's image
     widget, which always writes public_folder-prefixed paths, works directly
@@ -229,7 +263,7 @@ def build_home():
         + '</a></li>'
         for r in d["hero"]["roles"]
     )
-    alert_paras = "\n".join(f"      <p>{p}</p>" for p in d["latest"]["alert_paragraphs"])
+    alert_paras = "\n".join(f"      <p>{md(p, inline=True)}</p>" for p in d["latest"]["alert_paragraphs"])
     domains = "\n\n".join(
         f"""      <article class="domain">
         <div class="shot"><img loading="lazy" src="{IMG(x['photo'])}" alt="{x['photo_alt']}"{f' style="{x["photo_style"]}"' if x.get('photo_style') else ''}></div>
@@ -245,7 +279,7 @@ def build_home():
         for x in d["sections"]["domains"]
     )
     honours = "\n".join(
-        f'      <div class="honour"><div class="k">{h["k"]}</div><div class="v">{h["v"]}</div></div>'
+        f'      <div class="honour"><div class="k">{h["k"]}</div><div class="v">{md(h["v"], inline=True)}</div></div>'
         for h in d["honours"]["items"]
     )
 
@@ -303,7 +337,7 @@ def build_home():
 
 <section class="contact">
   <div class="wrap">
-    <p class="eyebrow">{d['contact']['eyebrow_html']}</p>
+    <p class="eyebrow">{md(d['contact']['eyebrow_html'], inline=True)}</p>
     <h2>{d['contact']['heading']}</h2>
     <p class="lede"><a class="mailto" href="mailto:{d['contact']['email']}">{d['contact']['email']}</a></p>
     <p style="margin-top:24px"><a class="btn btn-solid" href="{d['contact']['button_href']}">{d['contact']['button_text']}</a></p>
@@ -325,7 +359,8 @@ def build_sport():
 
     def spec_block(s):
         sub = f'<span class="sub">{s["sub"]}</span>' if s.get("sub") else ""
-        value = f"\n          {s['body_html']}\n        " if s.get("multiline") else s["body_html"]
+        body = md(s["body_html"])
+        value = f"\n          {body}\n        " if s.get("multiline") else body
         return f"""      <div class="spec">
         <div class="spec-k">{s['key']}{sub}</div>
         <div class="spec-v">{value}</div>
@@ -410,7 +445,7 @@ def build_music():
     d = load("music")
     ph = d["pagehead"]
     numbers = "\n".join(
-        f'      <div class="honour"><div class="k">{n["k"]}</div><div class="v">{n["v"]}</div></div>'
+        f'      <div class="honour"><div class="k">{n["k"]}</div><div class="v">{md(n["v"], inline=True)}</div></div>'
         for n in d["numbers"]["items"]
     )
 
@@ -512,7 +547,7 @@ def build_food_business():
     ph = d["pagehead"]
     sp = d["specialities"]
     specialities = "\n".join(
-        f'      <div class="honour"><div class="k">{i["k"]}</div><div class="v">{i["v"]}</div></div>'
+        f'      <div class="honour"><div class="k">{md(i["k"], inline=True)}</div><div class="v">{i["v"]}</div></div>'
         for i in sp["items"]
     )
     companies = "\n".join(
@@ -535,7 +570,7 @@ def build_food_business():
   <div class="pagehead-in">
     <div>
       <p class="eyebrow">{ph['eyebrow']}</p>
-      <h1 class="pagetitle">{ph['title']}</h1>
+      <h1 class="pagetitle">{md(ph['title'], inline=True)}</h1>
       <p class="lede">{ph['lede']}</p>
     </div>
     <div class="frame"><img loading="lazy" src="{IMG(ph['photo'])}" alt="{ph['photo_alt']}" style="{ph['photo_style']}"></div>
@@ -638,7 +673,7 @@ def build_charity():
     <p class="eyebrow">{b['eyebrow']}</p>
     <h2>{b['heading']}</h2>
     <blockquote class="pull">{b['quote']}</blockquote>
-    <p class="lede">{b['lede']}</p>
+    <p class="lede">{md(b['lede'], inline=True)}</p>
     <p style="margin-top:24px"><a class="btn btn-solid" href="{b['button_href']}">{b['button_text']}</a></p>
   </div>
 </section>
@@ -794,12 +829,17 @@ PHOTO_HELPERS = {"logo": logo_img, "photo": photo_img, "smiletrain": smiletrain_
 
 
 def cause_spec(c):
-    """Renders one .spec block for a charity 'cause' (with or without a photo)."""
-    text = c["text_html"]
+    """Renders one .spec block for a charity 'cause' (with or without a photo).
+
+    text_html/text_html_2 are markdown-widget fields rendered as block
+    content (md() without inline=True) - md() already wraps a plain
+    paragraph in <p>...</p> (or passes an already-<p>-wrapped raw-HTML
+    value through unchanged), so unlike the old code this no longer needs
+    to add its own <p> wrapper around either field.
+    """
+    text = md(c["text_html"])
     if c.get("text_html_2"):
-        text = f"<p>{text}</p>\n          <p>{c['text_html_2']}</p>"
-    elif not text.lstrip().startswith("<p"):
-        text = f"<p>{text}</p>"
+        text = f"{text}\n          {md(c['text_html_2'])}"
     helper = PHOTO_HELPERS.get(c.get("photo_kind"))
     if helper and c.get("photo"):
         img = helper(c["photo"], c["photo_alt"])
@@ -910,7 +950,7 @@ def build_jobs():
         f"""      <div class="spec">
         <div class="spec-k">{p['title']}<span class="sub">{p['sub']}</span></div>
         <div class="spec-v">
-          {p['body_html']}
+          {md(p['body_html'])}
         </div>
       </div>"""
         for p in d["openings"]["positions"]
@@ -920,7 +960,7 @@ def build_jobs():
 <section class="alerts">
   <div class="wrap">
     <p class="eyebrow">{d['unsolicited']['eyebrow']}</p>
-    <p class="lede">{d['unsolicited']['lede']}</p>
+    <p class="lede">{md(d['unsolicited']['lede'], inline=True)}</p>
   </div>
 </section>
 
@@ -949,7 +989,7 @@ def build_contact():
     body = pagehead(ph["eyebrow"], ph["title"], ph["lede"]) + f"""
 <section class="contact">
   <div class="wrap">
-    <p class="lede">{d['body']['lede']}</p>
+    <p class="lede">{md(d['body']['lede'], inline=True)}</p>
   </div>
 </section>
 """
@@ -1001,7 +1041,7 @@ def build_music_consulting():
   <div class="wrap">
     <p class="lede">{b['lede']}</p>
     <p>{b['paragraph']}</p>
-    <p style="margin-top:24px">{b['closing_html']}</p>
+    <p style="margin-top:24px">{md(b['closing_html'], inline=True)}</p>
   </div>
 </section>
 """

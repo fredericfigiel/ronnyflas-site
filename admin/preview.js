@@ -83,6 +83,31 @@
       .replace(/>/g, "&gt;");
   }
 
+  /** Mirrors build.py's md() helper: renders a "markdown" widget field
+   * (window.marked, loaded in admin/index.html) the same way scripts/build.py
+   * does with the Python `markdown` package, so the preview matches the real
+   * site. `inline=true` strips a single outer <p>...</p> wrapper for fields
+   * interpolated inside a context the call site already wraps itself (a
+   * <span>/<h1>/<div class="v">/<div class="k">, or a <p> it provides) -
+   * see the longer explanation on md() in scripts/build.py. */
+  function mdRender(text, inline) {
+    if (!text) return "";
+    var rendered;
+    try {
+      rendered = window.marked ? String(window.marked.parse(text)) : esc(text);
+    } catch (e) {
+      rendered = esc(text);
+    }
+    rendered = rendered.replace(/^\s+|\s+$/g, "");
+    if (inline && rendered.slice(0, 3) === "<p>" && rendered.slice(-4) === "</p>") {
+      var inner = rendered.slice(3, -4);
+      if (inner.indexOf("<p>") === -1 && inner.indexOf("<p ") === -1) {
+        rendered = inner;
+      }
+    }
+    return rendered;
+  }
+
   /** Mirrors build.py's feed_html() (minus URL/email auto-linking, skipped
    * on purpose for the preview - plain text is fine here). */
   function feedHtml(items) {
@@ -211,7 +236,7 @@
       })
       .join("\n");
 
-    var alertParas = (latest.alert_paragraphs || []).map(function (p) { return "<p>" + (p || "") + "</p>"; }).join("\n");
+    var alertParas = (latest.alert_paragraphs || []).map(function (p) { return "<p>" + mdRender(p, true) + "</p>"; }).join("\n");
 
     var domains = (sections.domains || [])
       .map(function (x) {
@@ -241,7 +266,7 @@
 
     var honourItems = (honours.items || [])
       .map(function (hh) {
-        return '<div class="honour"><div class="k">' + (hh.k || "") + '</div><div class="v">' + (hh.v || "") + "</div></div>";
+        return '<div class="honour"><div class="k">' + (hh.k || "") + '</div><div class="v">' + mdRender(hh.v, true) + "</div></div>";
       })
       .join("\n");
 
@@ -281,7 +306,7 @@
       '</h2>\n    <div class="honour-grid">\n' +
       honourItems +
       '\n    </div>\n  </div>\n</section>\n\n<section class="contact">\n  <div class="wrap">\n    <p class="eyebrow">' +
-      (contact.eyebrow_html || "") +
+      mdRender(contact.eyebrow_html, true) +
       "</p>\n    <h2>" +
       (contact.heading || "") +
       '</h2>\n    <p class="lede"><a class="mailto" href="mailto:' +
@@ -318,7 +343,8 @@
   function specBlock(s) {
     s = s || {};
     var sub = s.sub ? '<span class="sub">' + s.sub + "</span>" : "";
-    var value = s.multiline ? "\n          " + (s.body_html || "") + "\n        " : s.body_html || "";
+    var body = mdRender(s.body_html, false);
+    var value = s.multiline ? "\n          " + body + "\n        " : body;
     return '<div class="spec"><div class="spec-k">' + (s.key || "") + sub + '</div><div class="spec-v">' + value + "</div></div>";
   }
 
@@ -428,7 +454,7 @@
 
     var numberItems = (numbers.items || [])
       .map(function (n) {
-        return '<div class="honour"><div class="k">' + (n.k || "") + '</div><div class="v">' + (n.v || "") + "</div></div>";
+        return '<div class="honour"><div class="k">' + (n.k || "") + '</div><div class="v">' + mdRender(n.v, true) + "</div></div>";
       })
       .join("\n");
 
@@ -504,7 +530,7 @@
 
     var specialities = (sp.items || [])
       .map(function (i) {
-        return '<div class="honour"><div class="k">' + (i.k || "") + '</div><div class="v">' + (i.v || "") + "</div></div>";
+        return '<div class="honour"><div class="k">' + mdRender(i.k, true) + '</div><div class="v">' + (i.v || "") + "</div></div>";
       })
       .join("\n");
     var companies = (sp.companies || [])
@@ -528,7 +554,7 @@
       '\n<header class="pagehead">\n  <div class="pagehead-in">\n    <div>\n      <p class="eyebrow">' +
       (ph.eyebrow || "") +
       '</p>\n      <h1 class="pagetitle">' +
-      (ph.title || "") +
+      mdRender(ph.title, true) +
       '</h1>\n      <p class="lede">' +
       (ph.lede || "") +
       '</p>\n    </div>\n    <div class="frame"><img loading="lazy" src="' +
@@ -607,7 +633,7 @@
       '</h2>\n    <blockquote class="pull">' +
       (b.quote || "") +
       '</blockquote>\n    <p class="lede">' +
-      (b.lede || "") +
+      mdRender(b.lede, true) +
       '</p>\n    <p style="margin-top:24px"><a class="btn btn-solid" href="' +
       (b.button_href || "#") +
       '">' +
@@ -755,11 +781,13 @@
 
   function causeSpec(c) {
     c = c || {};
-    var text = c.text_html || "";
+    // text_html/text_html_2 are markdown-widget fields (mirrors build.py's
+    // cause_spec()): mdRender() already wraps a plain paragraph in
+    // <p>...</p> (or passes an already-<p>-wrapped raw-HTML value through
+    // unchanged), so no manual <p> wrapping is needed here any more.
+    var text = mdRender(c.text_html, false);
     if (c.text_html_2) {
-      text = "<p>" + text + "</p>\n          <p>" + c.text_html_2 + "</p>";
-    } else if (!/^\s*<p/i.test(text)) {
-      text = "<p>" + text + "</p>";
+      text = text + "\n          " + mdRender(c.text_html_2, false);
     }
     var helper = PHOTO_HELPERS[c.photo_kind];
     var value = text;
@@ -878,7 +906,7 @@
           '<span class="sub">' +
           (p.sub || "") +
           '</span></div><div class="spec-v">\n          ' +
-          (p.body_html || "") +
+          mdRender(p.body_html, false) +
           "\n        </div></div>"
         );
       })
@@ -889,7 +917,7 @@
       '\n<section class="alerts">\n  <div class="wrap">\n    <p class="eyebrow">' +
       (unsolicited.eyebrow || "") +
       '</p>\n    <p class="lede">' +
-      (unsolicited.lede || "") +
+      mdRender(unsolicited.lede, true) +
       '</p>\n  </div>\n</section>\n\n<section>\n  <div class="wrap">\n    <p class="eyebrow">' +
       (openings.eyebrow || "") +
       "</p>\n    <h2>" +
@@ -923,7 +951,7 @@
     return (
       pageheadHtml(ph.eyebrow, ph.title, ph.lede) +
       '\n<section class="contact">\n  <div class="wrap">\n    <p class="lede">' +
-      (b.lede || "") +
+      mdRender(b.lede, true) +
       "</p>\n  </div>\n</section>\n"
     );
   }
@@ -985,7 +1013,7 @@
       "</p>\n    <p>" +
       (b.paragraph || "") +
       '</p>\n    <p style="margin-top:24px">' +
-      (b.closing_html || "") +
+      mdRender(b.closing_html, true) +
       "</p>\n  </div>\n</section>\n"
     );
   }
