@@ -7,7 +7,11 @@ pagehead:
   eyebrow: Producer · Manager · Publisher · Recording Studio Owner
   title: Music
   lede: 30+ years experience
-photos: []
+photos:
+  - photo: /assets/img/ronny-signature-1.jpg
+    photo_alt: Deal Signature with Rotana
+  - photo_alt: Deal Signature with Rotana
+    photo: /assets/img/ronny-signature-2.jpg
 numbers:
   eyebrow: "-"
   heading: "-"
