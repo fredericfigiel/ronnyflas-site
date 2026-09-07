@@ -5,8 +5,11 @@ meta:
 
 hero:
   tagline: "My life…"
-  photo: "/assets/img/dee777_b3d9961ecd1e76ee775a431a39a1cba2.png"
-  photo_alt: "Ronny Flas, ISKA World Champion"
+  photos:
+    - photo: "/assets/img/dee777_b3d9961ecd1e76ee775a431a39a1cba2.png"
+      photo_alt: "Ronny Flas, ISKA World Champion"
+    - photo: "/assets/img/dee777_ab1d9c80936e4ae8ab7370a037b6cb94~mv2.jpg"
+      photo_alt: "Ronny Flas speaking at the Jonathan Club"
   roles:
     - title: "Food companies owner"
       sub: ""

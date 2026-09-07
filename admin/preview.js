@@ -45,7 +45,7 @@
   // head()).
   // ---------------------------------------------------------------------
   CMS.registerPreviewStyle(
-    "https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800&family=Barlow:wght@400;500;600&display=swap"
+    "https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800&family=Barlow:wght@400;500;600&family=Jost:wght@300;400&display=swap"
   );
   CMS.registerPreviewStyle(asset("/assets/css/main.css"));
   CMS.registerPreviewStyle(
@@ -236,6 +236,12 @@
       })
       .join("\n");
 
+    var heroPhotos = (hero.photos || [])
+      .map(function (p) {
+        return '<div class="frame hero-photo"><img src="' + asset(p.photo) + '" alt="' + (p.photo_alt || "") + '"></div>';
+      })
+      .join("\n");
+
     var alertParas = (latest.alert_paragraphs || []).map(function (p) { return "<p>" + mdRender(p, true) + "</p>"; }).join("\n");
 
     var domains = (sections.domains || [])
@@ -271,15 +277,13 @@
       .join("\n");
 
     return (
-      '\n<header class="hero">\n  <div class="hero-in">\n    <div>\n      <h1 class="name">Ronny<span class="last">Flas</span></h1>\n      <p class="tagline">' +
+      '\n<header class="hero">\n  <div class="hero-in">\n    <h1 class="name">Ronny<span class="last">Flas</span></h1>\n    <p class="tagline">' +
       (hero.tagline || "") +
-      '</p>\n      <ul class="roles">\n' +
+      '</p>\n    <div class="hero-photos">\n' +
+      heroPhotos +
+      '\n    </div>\n    <ul class="roles">\n' +
       roles +
-      '\n      </ul>\n    </div>\n    <div class="frame hero-photo">\n      <img src="' +
-      asset(hero.photo) +
-      '" alt="' +
-      (hero.photo_alt || "") +
-      '">\n    </div>\n  </div>\n</header>\n\n<section class="alerts">\n  <div class="wrap">\n    <div class="alerts-head">\n      <p class="eyebrow" style="margin:0">' +
+      '\n    </ul>\n  </div>\n</header>\n\n<section class="alerts">\n  <div class="wrap">\n    <div class="alerts-head">\n      <p class="eyebrow" style="margin:0">' +
       (latest.eyebrow || "") +
       "</p>\n      <h2>" +
       (latest.heading || "") +
