@@ -1,0 +1,1372 @@
+# Configuration de Decap CMS (interface d'administration du site).
+# Générée par scripts internes puis figée ici : modifiez ce fichier
+# uniquement si vous savez ce que vous faites (ou demandez à Claude).
+
+backend:
+  name: github
+  repo: fredericfigiel/ronnyflas-site
+  branch: main
+  base_url: https://REPLACE_WITH_CLOUDFLARE_WORKER_URL
+media_folder: assets/img
+public_folder: /assets/img
+locale: fr
+collections:
+- name: pages
+  label: Pages du site
+  files:
+  - file: content/home.yml
+    label: Accueil
+    name: home
+    fields:
+    - label: Référencement
+      name: meta
+      widget: object
+      fields:
+      - label: Titre (onglet du navigateur)
+        name: title
+        widget: string
+      - label: Description (SEO)
+        name: description
+        widget: text
+    - label: En-tête (photo + accroche)
+      name: hero
+      widget: object
+      fields:
+      - label: Accroche
+        name: tagline
+        widget: string
+        hint: 'HTML simple autorisé (ex: &hellip;)'
+      - label: Photo
+        name: photo
+        widget: image
+      - label: Texte alternatif de la photo
+        name: photo_alt
+        widget: string
+      - label: Rôles / liens (Sportsman, Music producer, etc.)
+        name: roles
+        widget: list
+        fields:
+        - label: Titre
+          name: title
+          widget: string
+        - label: Sous-titre
+          name: sub
+          widget: string
+          required: false
+        - label: Lien
+          name: href
+          widget: string
+    - label: Bloc "Latest" (actualité en avant)
+      name: latest
+      widget: object
+      fields:
+      - label: Eyebrow (petit texte au-dessus du titre)
+        name: eyebrow
+        widget: string
+      - label: Titre de section
+        name: heading
+        widget: string
+      - label: Étiquette (tag)
+        name: alert_tag
+        widget: string
+      - label: Titre de l'alerte
+        name: alert_title
+        widget: string
+      - label: Paragraphes
+        name: alert_paragraphs
+        widget: list
+        field:
+          label: Paragraphe
+          name: paragraph
+          widget: text
+          hint: 'HTML simple autorisé, ex: <a href="...">lien</a>'
+      - label: Texte du bouton
+        name: button_text
+        widget: string
+      - label: Lien du bouton
+        name: button_href
+        widget: string
+    - label: Section "Sport · Music · Food Business · Charity"
+      name: sections
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Titre
+        name: heading
+        widget: string
+      - label: Les 4 cartes
+        name: domains
+        widget: list
+        fields:
+        - label: Photo
+          name: photo
+          widget: image
+        - label: Texte alternatif photo
+          name: photo_alt
+          widget: string
+        - label: Style CSS avancé de la photo (laisser vide en général)
+          name: photo_style
+          widget: string
+          required: false
+        - label: Titre de la carte
+          name: title
+          widget: string
+        - label: Description
+          name: desc
+          widget: text
+        - label: Points clés
+          name: facts
+          widget: list
+          field:
+            label: Point
+            name: fact
+            widget: string
+        - label: Texte du bouton
+          name: button_text
+          widget: string
+        - label: Lien du bouton
+          name: button_href
+          widget: string
+    - label: Section "Titles & credentials"
+      name: honours
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Titre
+        name: heading
+        widget: string
+      - label: Chiffres
+        name: items
+        widget: list
+        fields:
+        - label: 'Valeur courte (ex: ISKA, 4, 5)'
+          name: k
+          widget: string
+        - label: Légende
+          name: v
+          widget: text
+          hint: 'HTML simple autorisé, ex: <br>'
+    - label: Bloc Contact (bas de page d'accueil)
+      name: contact
+      widget: object
+      fields:
+      - label: Liens au-dessus (HTML)
+        name: eyebrow_html
+        widget: text
+        hint: 'HTML simple autorisé, ex: liens <a href=...>'
+      - label: Titre
+        name: heading
+        widget: string
+      - label: Email
+        name: email
+        widget: string
+      - label: Texte du bouton
+        name: button_text
+        widget: string
+      - label: Lien du bouton
+        name: button_href
+        widget: string
+  - file: content/sport.yml
+    label: Sport
+    name: sport
+    fields:
+    - label: Référencement
+      name: meta
+      widget: object
+      fields:
+      - label: Titre (onglet du navigateur)
+        name: title
+        widget: string
+      - label: Description (SEO)
+        name: description
+        widget: text
+    - label: En-tête de page
+      name: pagehead
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Titre
+        name: title
+        widget: string
+      - label: Sous-titre / lede
+        name: lede
+        widget: text
+      - label: Photo
+        name: photo
+        widget: image
+      - label: Texte alternatif
+        name: photo_alt
+        widget: string
+    - label: Citation
+      name: quote
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Texte de la citation
+        name: text
+        widget: text
+    - label: Palmarès (disciplines)
+      name: record
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Titre
+        name: heading
+        widget: string
+      - label: Disciplines
+        name: specs
+        widget: list
+        fields:
+        - label: Nom
+          name: key
+          widget: string
+        - label: Sous-titre
+          name: sub
+          widget: string
+          required: false
+        - label: Sur plusieurs lignes (mise en forme avancée)
+          name: multiline
+          widget: boolean
+          required: false
+          default: false
+        - label: Contenu (HTML)
+          name: body_html
+          widget: text
+          hint: 'HTML simple autorisé, ex: <p>...</p> ou <ul><li>...</li></ul>'
+    - label: Coaching / promotion
+      name: coaching
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Titre
+        name: heading
+        widget: string
+      - label: Blocs
+        name: specs
+        widget: list
+        fields:
+        - label: Nom
+          name: key
+          widget: string
+        - label: Sous-titre
+          name: sub
+          widget: string
+          required: false
+        - label: Contenu (HTML)
+          name: body_html
+          widget: text
+          hint: HTML simple autorisé
+    - label: Galerie photos
+      name: gallery
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Titre
+        name: heading
+        widget: string
+      - label: Photos
+        name: photos
+        widget: list
+        fields:
+        - label: Photo
+          name: file
+          widget: image
+        - label: Texte alternatif
+          name: alt
+          widget: string
+        - label: Légende affichée
+          name: caption
+          widget: string
+    - label: Bandeau "Sport news"
+      name: news_teaser
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Titre
+        name: heading
+        widget: string
+      - label: Texte
+        name: lede
+        widget: text
+      - label: Texte du bouton
+        name: button_text
+        widget: string
+      - label: Lien du bouton
+        name: button_href
+        widget: string
+  - file: content/music.yml
+    label: Music
+    name: music
+    fields:
+    - label: Référencement
+      name: meta
+      widget: object
+      fields:
+      - label: Titre (onglet du navigateur)
+        name: title
+        widget: string
+      - label: Description (SEO)
+        name: description
+        widget: text
+    - label: En-tête de page
+      name: pagehead
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Titre
+        name: title
+        widget: string
+      - label: Sous-titre / lede
+        name: lede
+        widget: text
+    - label: Bloc chiffres clés
+      name: numbers
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Titre
+        name: heading
+        widget: string
+      - label: Chiffres
+        name: items
+        widget: list
+        fields:
+        - label: Valeur courte
+          name: k
+          widget: string
+        - label: Légende
+          name: v
+          widget: text
+          hint: 'HTML simple autorisé, ex: <br>'
+    - label: Contrats internationaux
+      name: deals
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Titre
+        name: heading
+        widget: string
+      - label: Nom du bloc
+        name: key
+        widget: string
+      - label: Liste (labels)
+        name: chips
+        widget: list
+        field:
+          label: Label
+          name: chip
+          widget: string
+      - label: 'Texte de fin (ex: "and many others…")'
+        name: wide_extra
+        widget: string
+    - label: Studios d'enregistrement
+      name: studios
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Titre
+        name: heading
+        widget: string
+      - label: Texte
+        name: lede
+        widget: text
+      - label: Nom du bloc
+        name: key
+        widget: string
+      - label: Liste (labels)
+        name: chips
+        widget: list
+        field:
+          label: Label
+          name: chip
+          widget: string
+      - label: Texte de fin
+        name: wide_extra
+        widget: string
+    - label: Salons professionnels
+      name: fairs
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Titre
+        name: heading
+        widget: string
+      - label: Nom du bloc
+        name: key
+        widget: string
+      - label: Liste (labels)
+        name: chips
+        widget: list
+        field:
+          label: Label
+          name: chip
+          widget: string
+      - label: Texte de fin
+        name: wide_extra
+        widget: string
+    - label: Artistes / pays
+      name: artists
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Titre
+        name: heading
+        widget: string
+      - label: Nom du bloc
+        name: key
+        widget: string
+      - label: Liste (labels)
+        name: chips
+        widget: list
+        field:
+          label: Label
+          name: chip
+          widget: string
+      - label: Texte de fin
+        name: wide_extra
+        widget: string
+      - label: Boutons
+        name: buttons
+        widget: list
+        fields:
+        - label: Texte
+          name: text
+          widget: string
+        - label: Lien
+          name: href
+          widget: string
+  - file: content/food-business.yml
+    label: Food Business
+    name: food-business
+    fields:
+    - label: Référencement
+      name: meta
+      widget: object
+      fields:
+      - label: Titre (onglet du navigateur)
+        name: title
+        widget: string
+      - label: Description (SEO)
+        name: description
+        widget: text
+    - label: En-tête de page
+      name: pagehead
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Titre
+        name: title
+        widget: string
+      - label: Sous-titre / lede
+        name: lede
+        widget: text
+      - label: Photo
+        name: photo
+        widget: image
+      - label: Texte alternatif
+        name: photo_alt
+        widget: string
+      - label: Style CSS avancé (laisser vide en général)
+        name: photo_style
+        widget: string
+        required: false
+    - label: Spécialités
+      name: specialities
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Titre
+        name: heading
+        widget: string
+      - label: Vignettes
+        name: items
+        widget: list
+        fields:
+        - label: Valeur courte
+          name: k
+          widget: string
+          hint: 'HTML simple autorisé, ex: <br>'
+        - label: Légende
+          name: v
+          widget: string
+      - label: Sociétés (liens)
+        name: companies
+        widget: list
+        fields:
+        - label: Nom affiché
+          name: label
+          widget: string
+        - label: Lien
+          name: href
+          widget: string
+      - label: Texte du bouton "news"
+        name: news_button_text
+        widget: string
+        hint: HTML simple autorisé
+      - label: Lien du bouton "news"
+        name: news_button_href
+        widget: string
+    - label: Nos produits
+      name: products
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Titre
+        name: heading
+        widget: string
+      - label: Photos produits
+        name: photos
+        widget: list
+        fields:
+        - label: Photo
+          name: file
+          widget: image
+        - label: Texte alternatif
+          name: alt
+          widget: string
+      - label: Photo Retaxa
+        name: retaxa_photo
+        widget: image
+      - label: Texte alternatif photo Retaxa
+        name: retaxa_alt
+        widget: string
+    - label: Nos clients
+      name: clients
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Titre
+        name: heading
+        widget: string
+      - label: Enseignes retail
+        name: retail_chips
+        widget: list
+        field:
+          label: Enseigne
+          name: chip
+          widget: string
+      - label: Note sous les enseignes retail
+        name: retail_note
+        widget: text
+        hint: HTML simple autorisé
+      - label: Grossistes
+        name: wholesaler_chips
+        widget: list
+        field:
+          label: Nom
+          name: chip
+          widget: string
+      - label: Stations-service
+        name: gas_station_chips
+        widget: list
+        field:
+          label: Marque
+          name: chip
+          widget: string
+      - label: Clients indépendants
+        name: independant_items
+        widget: list
+        field:
+          label: Élément
+          name: item
+          widget: string
+  - file: content/charity.yml
+    label: Charity
+    name: charity
+    fields:
+    - label: Référencement
+      name: meta
+      widget: object
+      fields:
+      - label: Titre (onglet du navigateur)
+        name: title
+        widget: string
+      - label: Description (SEO)
+        name: description
+        widget: text
+    - label: En-tête de page
+      name: pagehead
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Titre
+        name: title
+        widget: string
+      - label: Sous-titre / lede
+        name: lede
+        widget: text
+      - label: Photo
+        name: photo
+        widget: image
+      - label: Texte alternatif
+        name: photo_alt
+        widget: string
+    - label: Corps de la page
+      name: body
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Titre
+        name: heading
+        widget: string
+      - label: Citation
+        name: quote
+        widget: text
+      - label: Texte principal
+        name: lede
+        widget: text
+        hint: 'HTML simple autorisé, ex: <a href="mailto:...">...</a>'
+      - label: Texte du bouton
+        name: button_text
+        widget: string
+      - label: Lien du bouton
+        name: button_href
+        widget: string
+  - file: content/news.yml
+    label: News (page d'index)
+    name: news
+    fields:
+    - label: Référencement
+      name: meta
+      widget: object
+      fields:
+      - label: Titre (onglet du navigateur)
+        name: title
+        widget: string
+      - label: Description (SEO)
+        name: description
+        widget: text
+    - label: En-tête de page
+      name: pagehead
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Titre
+        name: title
+        widget: string
+      - label: Sous-titre / lede
+        name: lede
+        widget: text
+    - label: Liens vers les 5 rubriques
+      name: links
+      widget: list
+      fields:
+      - label: Texte
+        name: text
+        widget: string
+      - label: Lien
+        name: href
+        widget: string
+  - file: content/castings.yml
+    label: Castings
+    name: castings
+    fields:
+    - label: Référencement
+      name: meta
+      widget: object
+      fields:
+      - label: Titre (onglet du navigateur)
+        name: title
+        widget: string
+      - label: Description (SEO)
+        name: description
+        widget: text
+    - label: En-tête de page
+      name: pagehead
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Titre
+        name: title
+        widget: string
+      - label: Sous-titre / lede
+        name: lede
+        widget: text
+    - label: Annonce
+      name: alert
+      widget: object
+      fields:
+      - label: Étiquette
+        name: tag
+        widget: string
+      - label: Titre
+        name: title
+        widget: string
+        hint: HTML simple autorisé
+      - label: Paragraphes
+        name: paragraphs
+        widget: list
+        field:
+          label: Paragraphe
+          name: paragraph
+          widget: text
+          hint: HTML simple autorisé
+      - label: Email de contact
+        name: email
+        widget: string
+  - file: content/food-business-news.yml
+    label: Food Business News
+    name: food-business-news
+    fields:
+    - label: Référencement
+      name: meta
+      widget: object
+      fields:
+      - label: Titre (onglet du navigateur)
+        name: title
+        widget: string
+      - label: Description (SEO)
+        name: description
+        widget: text
+    - label: En-tête de page
+      name: pagehead
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Titre
+        name: title
+        widget: string
+      - label: Sous-titre / lede
+        name: lede
+        widget: text
+      - label: Photo
+        name: photo
+        widget: image
+      - label: Texte alternatif
+        name: photo_alt
+        widget: string
+      - label: Style CSS avancé (laisser vide en général)
+        name: photo_style
+        widget: string
+        required: false
+    - label: Actualités (une entrée = un encart)
+      name: items
+      widget: list
+      field:
+        label: Actualité
+        name: item
+        widget: text
+        hint: Vous pouvez aller à la ligne dans le texte ; les liens/emails connus sont transformés automatiquement
+          en liens cliquables.
+    - label: Galerie photo
+      name: gallery
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Titre
+        name: title
+        widget: string
+      - label: Photos
+        name: photos
+        widget: list
+        field:
+          label: Photo
+          name: photo
+          widget: image
+    - label: Bouton retour
+      name: back_button
+      widget: object
+      fields:
+      - label: Texte
+        name: text
+        widget: string
+      - label: Lien
+        name: href
+        widget: string
+  - file: content/music-news.yml
+    label: Music News
+    name: music-news
+    fields:
+    - label: Référencement
+      name: meta
+      widget: object
+      fields:
+      - label: Titre (onglet du navigateur)
+        name: title
+        widget: string
+      - label: Description (SEO)
+        name: description
+        widget: text
+    - label: En-tête de page
+      name: pagehead
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Titre
+        name: title
+        widget: string
+      - label: Sous-titre / lede
+        name: lede
+        widget: text
+      - label: Photo
+        name: photo
+        widget: image
+      - label: Texte alternatif
+        name: photo_alt
+        widget: string
+    - label: Actualités (une entrée = un encart)
+      name: items
+      widget: list
+      field:
+        label: Actualité
+        name: item
+        widget: text
+        hint: Vous pouvez aller à la ligne dans le texte ; les liens/emails connus sont transformés automatiquement
+          en liens cliquables.
+    - label: Galerie photo
+      name: gallery
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Titre
+        name: title
+        widget: string
+      - label: Photos
+        name: photos
+        widget: list
+        field:
+          label: Photo
+          name: photo
+          widget: image
+    - label: Bouton retour
+      name: back_button
+      widget: object
+      fields:
+      - label: Texte
+        name: text
+        widget: string
+      - label: Lien
+        name: href
+        widget: string
+  - file: content/sport-news.yml
+    label: Sport News
+    name: sport-news
+    fields:
+    - label: Référencement
+      name: meta
+      widget: object
+      fields:
+      - label: Titre (onglet du navigateur)
+        name: title
+        widget: string
+      - label: Description (SEO)
+        name: description
+        widget: text
+    - label: En-tête de page
+      name: pagehead
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Titre
+        name: title
+        widget: string
+      - label: Sous-titre / lede
+        name: lede
+        widget: text
+      - label: Photo
+        name: photo
+        widget: image
+      - label: Texte alternatif
+        name: photo_alt
+        widget: string
+    - label: Actualités (une entrée = un encart)
+      name: items
+      widget: list
+      field:
+        label: Actualité
+        name: item
+        widget: text
+        hint: Vous pouvez aller à la ligne dans le texte ; les liens/emails connus sont transformés automatiquement
+          en liens cliquables.
+    - label: Galerie photo
+      name: gallery
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Titre
+        name: title
+        widget: string
+      - label: Photos
+        name: photos
+        widget: list
+        field:
+          label: Photo
+          name: photo
+          widget: image
+    - label: Bouton retour
+      name: back_button
+      widget: object
+      fields:
+      - label: Texte
+        name: text
+        widget: string
+      - label: Lien
+        name: href
+        widget: string
+  - file: content/charity-news.yml
+    label: Charity News
+    name: charity-news
+    fields:
+    - label: Référencement
+      name: meta
+      widget: object
+      fields:
+      - label: Titre (onglet du navigateur)
+        name: title
+        widget: string
+      - label: Description (SEO)
+        name: description
+        widget: text
+    - label: En-tête de page
+      name: pagehead
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Titre
+        name: title
+        widget: string
+      - label: Sous-titre / lede
+        name: lede
+        widget: text
+      - label: Photo
+        name: photo
+        widget: image
+      - label: Texte alternatif
+        name: photo_alt
+        widget: string
+        hint: HTML simple autorisé
+    - label: 'Alertes en haut de page (ex: Bibi, Leo)'
+      name: alerts
+      widget: list
+      fields:
+      - label: Photo
+        name: photo
+        widget: image
+      - label: Texte alternatif
+        name: photo_alt
+        widget: string
+      - label: Étiquette
+        name: tag
+        widget: string
+      - label: Titre
+        name: title
+        widget: string
+      - label: Texte
+        name: text
+        widget: text
+    - label: Actions régulières
+      name: regular
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Titre
+        name: heading
+        widget: string
+      - label: Causes
+        name: causes
+        widget: list
+        fields:
+        - label: Nom
+          name: key
+          widget: string
+          hint: HTML simple autorisé
+        - label: Type d'affichage de la photo
+          name: photo_kind
+          widget: select
+          options:
+          - logo
+          - photo
+          - smiletrain
+          required: false
+          hint: logo = petit logo, photo = photo portrait, smiletrain = grande bannière. Laisser vide
+            si pas de photo.
+        - label: Photo
+          name: photo
+          widget: image
+          required: false
+        - label: Texte alternatif photo
+          name: photo_alt
+          widget: string
+          required: false
+        - label: Texte (HTML)
+          name: text_html
+          widget: text
+          hint: HTML simple autorisé
+        - label: Second paragraphe (optionnel)
+          name: text_html_2
+          widget: text
+          required: false
+    - label: Autres causes soutenues
+      name: supports
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Titre
+        name: heading
+        widget: string
+      - label: Causes
+        name: causes
+        widget: list
+        fields:
+        - label: Nom
+          name: key
+          widget: string
+          hint: HTML simple autorisé
+        - label: Type d'affichage de la photo
+          name: photo_kind
+          widget: select
+          options:
+          - logo
+          - photo
+          - smiletrain
+          required: false
+          hint: logo = petit logo, photo = photo portrait, smiletrain = grande bannière. Laisser vide
+            si pas de photo.
+        - label: Photo
+          name: photo
+          widget: image
+          required: false
+        - label: Texte alternatif photo
+          name: photo_alt
+          widget: string
+          required: false
+        - label: Texte (HTML)
+          name: text_html
+          widget: text
+          hint: HTML simple autorisé
+        - label: Second paragraphe (optionnel)
+          name: text_html_2
+          widget: text
+          required: false
+    - label: Protection des insectes
+      name: insects
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Titre
+        name: heading
+        widget: string
+      - label: Photos
+        name: photos
+        widget: list
+        fields:
+        - label: Photo
+          name: file
+          widget: image
+        - label: Texte alternatif
+          name: alt
+          widget: string
+      - label: Causes
+        name: causes
+        widget: list
+        fields:
+        - label: Nom
+          name: key
+          widget: string
+          hint: HTML simple autorisé
+        - label: Type d'affichage de la photo
+          name: photo_kind
+          widget: select
+          options:
+          - logo
+          - photo
+          - smiletrain
+          required: false
+          hint: logo = petit logo, photo = photo portrait, smiletrain = grande bannière. Laisser vide
+            si pas de photo.
+        - label: Photo
+          name: photo
+          widget: image
+          required: false
+        - label: Texte alternatif photo
+          name: photo_alt
+          widget: string
+          required: false
+        - label: Texte (HTML)
+          name: text_html
+          widget: text
+          hint: HTML simple autorisé
+        - label: Second paragraphe (optionnel)
+          name: text_html_2
+          widget: text
+          required: false
+    - label: Organisations soutenues
+      name: organisations
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Titre
+        name: heading
+        widget: string
+      - label: Logos
+        name: logos
+        widget: list
+        fields:
+        - label: Logo
+          name: file
+          widget: image
+        - label: Texte alternatif
+          name: alt
+          widget: string
+          hint: HTML simple autorisé
+      - label: Bouton retour
+        name: back_button
+        widget: object
+        fields:
+        - label: Texte
+          name: text
+          widget: string
+        - label: Lien
+          name: href
+          widget: string
+  - file: content/jobs.yml
+    label: Jobs
+    name: jobs
+    fields:
+    - label: Référencement
+      name: meta
+      widget: object
+      fields:
+      - label: Titre (onglet du navigateur)
+        name: title
+        widget: string
+      - label: Description (SEO)
+        name: description
+        widget: text
+    - label: En-tête de page
+      name: pagehead
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Titre
+        name: title
+        widget: string
+      - label: Sous-titre / lede
+        name: lede
+        widget: text
+      - label: Photo
+        name: photo
+        widget: image
+      - label: Texte alternatif
+        name: photo_alt
+        widget: string
+    - label: Candidature spontanée
+      name: unsolicited
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Texte
+        name: lede
+        widget: text
+        hint: 'HTML simple autorisé, ex: <a href="mailto:...">email</a>'
+    - label: Postes ouverts
+      name: openings
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Titre
+        name: heading
+        widget: string
+      - label: Offres
+        name: positions
+        widget: list
+        fields:
+        - label: Titre du poste
+          name: title
+          widget: string
+        - label: Sous-titre (lieu)
+          name: sub
+          widget: string
+        - label: Description (HTML)
+          name: body_html
+          widget: text
+          hint: 'HTML autorisé, ex: <p>...</p>, <ul><li>...</li></ul>'
+  - file: content/contact.yml
+    label: Contact
+    name: contact
+    fields:
+    - label: Référencement
+      name: meta
+      widget: object
+      fields:
+      - label: Titre (onglet du navigateur)
+        name: title
+        widget: string
+      - label: Description (SEO)
+        name: description
+        widget: text
+    - label: En-tête de page
+      name: pagehead
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Titre
+        name: title
+        widget: string
+      - label: Sous-titre / lede
+        name: lede
+        widget: text
+    - label: Corps de la page
+      name: body
+      widget: object
+      fields:
+      - label: Texte
+        name: lede
+        widget: text
+        hint: 'HTML simple autorisé, ex: <a href="mailto:...">email</a>'
+  - file: content/personal-pictures.yml
+    label: Personal Pictures
+    name: personal-pictures
+    fields:
+    - label: Référencement
+      name: meta
+      widget: object
+      fields:
+      - label: Titre (onglet du navigateur)
+        name: title
+        widget: string
+      - label: Description (SEO)
+        name: description
+        widget: text
+    - label: En-tête de page
+      name: pagehead
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Titre
+        name: title
+        widget: string
+      - label: Sous-titre / lede
+        name: lede
+        widget: text
+    - label: Photos
+      name: pictures
+      widget: list
+      fields:
+      - label: Photo
+        name: file
+        widget: image
+      - label: Titre
+        name: title
+        widget: string
+      - label: Description
+        name: desc
+        widget: text
+        required: false
+  - file: content/music-consulting.yml
+    label: Music Consulting
+    name: music-consulting
+    fields:
+    - label: Référencement
+      name: meta
+      widget: object
+      fields:
+      - label: Titre (onglet du navigateur)
+        name: title
+        widget: string
+      - label: Description (SEO)
+        name: description
+        widget: text
+    - label: En-tête de page
+      name: pagehead
+      widget: object
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+      - label: Titre
+        name: title
+        widget: string
+      - label: Sous-titre / lede
+        name: lede
+        widget: text
+    - label: Corps de la page
+      name: body
+      widget: object
+      fields:
+      - label: Texte d'intro
+        name: lede
+        widget: text
+      - label: Paragraphe
+        name: paragraph
+        widget: text
+      - label: Texte de conclusion (HTML)
+        name: closing_html
+        widget: text
+        hint: 'HTML simple autorisé, ex: <a href="/contact/">HERE</a>'

@@ -1,0 +1,21 @@
+# Page: /charity/
+meta:
+  title: "Charity - Ronny Flas | Animal protection"
+  description: "Ronny Flas is actively engaged in the protection of animals and especially in the defense of abused animals. Contact: ronny.flas@gmail.com"
+
+pagehead:
+  eyebrow: "Animal protection"
+  title: "Charity"
+  lede: "Ronny Flas is actively engaged in the protection of animals and especially in the defense of abused animals as well as in other sectors."
+  photo: "/assets/img/127f4981c7ba86de25ceabeff83a5a62.png"
+  photo_alt: "Cats and dog"
+
+body:
+  eyebrow: "The fight"
+  heading: "Let's be united"
+  quote: "&ldquo;Through his actions, he has already saved numerous animals from unacceptable living conditions and will continue his fight for animal safety.&rdquo;"
+  lede: |-
+    If you want to share info and/or bring your support to this noble cause and/or need help in relation to animal safety, contact us by email at
+          <a class="mailto" href="mailto:ronny.flas@gmail.com">ronny.flas@gmail.com</a>. In those difficult times, let's be united !
+  button_text: "Check out my charity news"
+  button_href: "/charity-news/"

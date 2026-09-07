@@ -1,0 +1,21 @@
+# Page: /news/ (index of news sections)
+meta:
+  title: "News - Ronny Flas"
+  description: "Castings, food business, music, sport and charity news from Ronny Flas."
+
+pagehead:
+  eyebrow: "Latest"
+  title: "News"
+  lede: "Castings, food business, music, sport and charity news from Ronny Flas."
+
+links:
+  - text: "Castings"
+    href: "/castings/"
+  - text: "Food Business News"
+    href: "/food-business-news/"
+  - text: "Music News"
+    href: "/music-news/"
+  - text: "Sport News"
+    href: "/sport-news/"
+  - text: "Charity News"
+    href: "/charity-news/"

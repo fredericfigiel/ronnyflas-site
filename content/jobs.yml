@@ -1,0 +1,62 @@
+# Page: /jobs/
+meta:
+  title: "JOBS | ronnyflas"
+  description: "Job offers and unsolicited applications at Ronny Flas' companies: Retaxa and Flaronis."
+
+pagehead:
+  eyebrow: "Careers"
+  title: "Jobs"
+  lede: "We are always looking for new talents with great ideas, especially in the marketing and sales !"
+  photo: "/assets/img/34adc0205bfebed43b9e5041feee83dd.jpg"
+  photo_alt: "Handshake"
+
+unsolicited:
+  eyebrow: "Unsolicited application"
+  lede: 'You can still send us an unsolicited application (with picture) to <a class="mailto" href="mailto:ronny.flas@gmail.com">ronny.flas@gmail.com</a>.'
+
+openings:
+  eyebrow: "Open positions"
+  heading: "Here are the jobs we are currently offering in our companies"
+  positions:
+    - title: "Internal Administrative and Commercial Assistant"
+      sub: "Luxembourg"
+      body_html: |-
+        <p>Our company RETAXA s.a., active in the food sector and mainly in coffee, is looking for a full-time internal administrative and commercial assistant for its offices in the North of the Grand Duchy of Luxembourg (Wemperhardt).</p>
+        <p><strong>Required profile:</strong></p>
+        <ul>
+          <li>Trilingual French-German-English</li>
+          <li>Dutch and Luxembourgish are assets</li>
+          <li>Versatile and motivated, team spirit</li>
+          <li>IT skills required (office suite, ERP, social networks, e-commerce, etc.)</li>
+          <li>Skills in community management, e-commerce site management and digital marketing are assets</li>
+          <li>Experience in a similar position is also an asset</li>
+        </ul>
+        <p><strong>We offer:</strong></p>
+        <ul>
+          <li>Diversified, long-term full-time work (CDI)</li>
+          <li>A young and dynamic atmosphere</li>
+          <li>Possibilities for development and evolution</li>
+        </ul>
+        <p>Send your applications (WITH PHOTO) by email: <a href="mailto:micheline.matagne@retaxa.lu">micheline.matagne@retaxa.lu</a></p>
+    - title: "Sales Representative"
+      sub: "BE-LUX territory"
+      body_html: |-
+        <p>Our group of companies active in the food sector, and particularly coffee, is looking for a sales representative for Belgium and Luxembourg for the Retail sector.</p>
+        <p><strong>Required profile:</strong></p>
+        <ul>
+          <li>Experience in a similar position and/or appropriate studies (e.g. business studies)</li>
+          <li>French-Dutch-German</li>
+          <li>English and Luxembourgish are assets</li>
+          <li>Good negotiation skills and good human relations</li>
+          <li>IT tools (office suite)</li>
+          <li>Dynamic, ambitious, versatile and motivated</li>
+          <li>Knowing how to work independently and wishing to build a long-term career</li>
+        </ul>
+        <p><strong>We offer:</strong></p>
+        <ul>
+          <li>Diversified and long-term work (CDI)</li>
+          <li>A young and dynamic atmosphere</li>
+          <li>A career plan</li>
+          <li>A good remuneration with possibility of advancement + benefits such as: car, mobile phone, laptop,&hellip;</li>
+        </ul>
+        <p>Send your applications with photo to <a href="mailto:micheline.matagne@retaxa.lu">micheline.matagne@retaxa.lu</a></p>
