@@ -99,14 +99,6 @@ sections:
         - "Share info or bring support: ronny.flas@gmail.com"
       button_text: Charity
       button_href: /charity/
-honours:
-  eyebrow: Titles & credentials
-  heading: The record
-  items:
-    - k: ISKA
-      v: World champion
-    - k: 3rd Dan
-      v: Karate full contact<br>black belt
 contact:
   eyebrow_html: <a href="/castings/">Castings</a> · <a
     href="/music-consulting/">Music consulting</a> · <a href="/jobs/">Jobs</a>

@@ -89,7 +89,7 @@
     max-width:var(--maxw); margin:0 auto; padding:64px 24px 56px;
   }
   .name{
-    font-family:'Jost',var(--display); font-weight:300; text-transform:uppercase;
+    font-family:var(--display); font-weight:800; text-transform:uppercase;
     font-size:clamp(58px,9.5vw,124px); line-height:.82; margin:0;
   }
   .name .last{color:var(--red); display:block}
@@ -179,10 +179,6 @@
   .domain .btn{align-self:flex-start; margin-top:auto}
 
   /* ---------- honours ---------- */
-  .honours{
-    background:linear-gradient(180deg,var(--surface-2),var(--surface));
-    border-top:1px solid var(--line); border-bottom:1px solid var(--line);
-  }
   .honour-grid{
     display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
     background:var(--line); border:1px solid var(--line); margin-top:28px;
