@@ -6,7 +6,7 @@ backend:
   name: github
   repo: fredericfigiel/ronnyflas-site
   branch: main
-  base_url: https://REPLACE_WITH_CLOUDFLARE_WORKER_URL
+  base_url: https://ronnyflas-cms-auth.gilles-piette.workers.dev
 media_folder: assets/img
 public_folder: /assets/img
 locale: fr
