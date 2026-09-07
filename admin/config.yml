@@ -79,8 +79,9 @@ collections:
         field:
           label: Paragraphe
           name: paragraph
-          widget: text
-          hint: 'HTML simple autorisé, ex: <a href="...">lien</a>'
+          widget: markdown
+          modes: [rich_text]
+          buttons: [bold, italic, link]
       - label: Texte du bouton
         name: button_text
         widget: string
@@ -152,16 +153,18 @@ collections:
           widget: string
         - label: Légende
           name: v
-          widget: text
-          hint: 'HTML simple autorisé, ex: <br>'
+          widget: markdown
+          modes: [rich_text]
+          buttons: [bold, italic, link]
     - label: Bloc Contact (bas de page d'accueil)
       name: contact
       widget: object
       fields:
-      - label: Liens au-dessus (HTML)
+      - label: Liens au-dessus
         name: eyebrow_html
-        widget: text
-        hint: 'HTML simple autorisé, ex: liens <a href=...>'
+        widget: markdown
+        modes: [rich_text]
+        buttons: [bold, italic, link]
       - label: Titre
         name: heading
         widget: string
@@ -244,10 +247,11 @@ collections:
           widget: boolean
           required: false
           default: false
-        - label: Contenu (HTML)
+        - label: Contenu
           name: body_html
-          widget: text
-          hint: 'HTML simple autorisé, ex: <p>...</p> ou <ul><li>...</li></ul>'
+          widget: markdown
+          modes: [rich_text]
+          buttons: [bold, italic, link, bulleted-list]
     - label: Coaching / promotion
       name: coaching
       widget: object
@@ -270,10 +274,11 @@ collections:
           name: sub
           widget: string
           required: false
-        - label: Contenu (HTML)
+        - label: Contenu
           name: body_html
-          widget: text
-          hint: HTML simple autorisé
+          widget: markdown
+          modes: [rich_text]
+          buttons: [bold, italic, link, bulleted-list]
     - label: Galerie photos
       name: gallery
       widget: object
@@ -365,8 +370,9 @@ collections:
           widget: string
         - label: Légende
           name: v
-          widget: text
-          hint: 'HTML simple autorisé, ex: <br>'
+          widget: markdown
+          modes: [rich_text]
+          buttons: [bold, italic, link]
     - label: Contrats internationaux
       name: deals
       widget: object
@@ -496,7 +502,9 @@ collections:
         widget: string
       - label: Titre
         name: title
-        widget: string
+        widget: markdown
+        modes: [rich_text]
+        buttons: [bold, italic, link]
       - label: Sous-titre / lede
         name: lede
         widget: text
@@ -527,8 +535,9 @@ collections:
         fields:
         - label: Valeur courte
           name: k
-          widget: string
-          hint: 'HTML simple autorisé, ex: <br>'
+          widget: markdown
+          modes: [rich_text]
+          buttons: [bold, italic, link]
         - label: Légende
           name: v
           widget: string
@@ -668,8 +677,9 @@ collections:
         widget: text
       - label: Texte principal
         name: lede
-        widget: text
-        hint: 'HTML simple autorisé, ex: <a href="mailto:...">...</a>'
+        widget: markdown
+        modes: [rich_text]
+        buttons: [bold, italic, link]
       - label: Texte du bouton
         name: button_text
         widget: string
@@ -1073,13 +1083,16 @@ collections:
           name: photo_alt
           widget: string
           required: false
-        - label: Texte (HTML)
+        - label: Texte
           name: text_html
-          widget: text
-          hint: HTML simple autorisé
+          widget: markdown
+          modes: [rich_text]
+          buttons: [bold, italic, link]
         - label: Second paragraphe (optionnel)
           name: text_html_2
-          widget: text
+          widget: markdown
+          modes: [rich_text]
+          buttons: [bold, italic, link]
           required: false
     - label: Autres causes soutenues
       name: supports
@@ -1119,13 +1132,16 @@ collections:
           name: photo_alt
           widget: string
           required: false
-        - label: Texte (HTML)
+        - label: Texte
           name: text_html
-          widget: text
-          hint: HTML simple autorisé
+          widget: markdown
+          modes: [rich_text]
+          buttons: [bold, italic, link]
         - label: Second paragraphe (optionnel)
           name: text_html_2
-          widget: text
+          widget: markdown
+          modes: [rich_text]
+          buttons: [bold, italic, link]
           required: false
     - label: Protection des insectes
       name: insects
@@ -1176,13 +1192,16 @@ collections:
           name: photo_alt
           widget: string
           required: false
-        - label: Texte (HTML)
+        - label: Texte
           name: text_html
-          widget: text
-          hint: HTML simple autorisé
+          widget: markdown
+          modes: [rich_text]
+          buttons: [bold, italic, link]
         - label: Second paragraphe (optionnel)
           name: text_html_2
-          widget: text
+          widget: markdown
+          modes: [rich_text]
+          buttons: [bold, italic, link]
           required: false
     - label: Organisations soutenues
       name: organisations
@@ -1259,8 +1278,9 @@ collections:
         widget: string
       - label: Texte
         name: lede
-        widget: text
-        hint: 'HTML simple autorisé, ex: <a href="mailto:...">email</a>'
+        widget: markdown
+        modes: [rich_text]
+        buttons: [bold, italic, link]
     - label: Postes ouverts
       name: openings
       widget: object
@@ -1283,10 +1303,11 @@ collections:
         - label: Sous-titre (lieu)
           name: sub
           widget: string
-        - label: Description (HTML)
+        - label: Description
           name: body_html
-          widget: text
-          hint: 'HTML autorisé, ex: <p>...</p>, <ul><li>...</li></ul>'
+          widget: markdown
+          modes: [rich_text]
+          buttons: [bold, italic, link, bulleted-list]
   - file: content/contact.yml
     label: Contact
     name: contact
@@ -1320,8 +1341,9 @@ collections:
       fields:
       - label: Texte
         name: lede
-        widget: text
-        hint: 'HTML simple autorisé, ex: <a href="mailto:...">email</a>'
+        widget: markdown
+        modes: [rich_text]
+        buttons: [bold, italic, link]
   - file: content/personal-pictures.yml
     label: Personal Pictures
     name: personal-pictures
@@ -1402,7 +1424,8 @@ collections:
       - label: Paragraphe
         name: paragraph
         widget: text
-      - label: Texte de conclusion (HTML)
+      - label: Texte de conclusion
         name: closing_html
-        widget: text
-        hint: 'HTML simple autorisé, ex: <a href="/contact/">HERE</a>'
+        widget: markdown
+        modes: [rich_text]
+        buttons: [bold, italic, link]

@@ -8,8 +8,13 @@
 <body>
   <!-- Ceci charge Decap CMS, l'interface d'administration du site. -->
   <script src="https://unpkg.com/decap-cms@^3/dist/decap-cms.js"></script>
+  <!-- Rendu Markdown -> HTML pour l'aperçu (mêmes champs que le widget
+       "markdown" de admin/config.yml, rendus côté serveur par la librairie
+       Python `markdown` dans scripts/build.py) - doit être chargé avant
+       preview.js, qui s'en sert. -->
+  <script src="https://unpkg.com/marked@18.0.11/lib/marked.umd.js"></script>
   <!-- Aperçu en direct (personnalisé pour nos pages) - doit être chargé après
-       decap-cms.js ci-dessus, une fois que window.CMS existe. -->
+       decap-cms.js et marked.js ci-dessus, une fois que window.CMS existe. -->
   <script src="preview.js"></script>
 </body>
 </html>

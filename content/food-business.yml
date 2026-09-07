@@ -4,7 +4,7 @@ meta:
   description: "Food companies in Belgium, Luxembourg, Germany, Romania and Russia, with own coffee and chocolate factories. Clients include Edeka, Carrefour, Auchan, Delhaize and Metro."
 
 pagehead:
-  eyebrow: "Belgium &middot; Luxembourg &middot; Germany &middot; Romania &middot; Russia"
+  eyebrow: "Belgium · Luxembourg · Germany · Romania · Russia"
   title: "Food<br>Business"
   lede: "Owner of several companies in the food business. Owner of his own coffee and chocolate factories."
   photo: "/assets/img/dee777_cfc050b51c7f754444c4071dd41f7258.png"
@@ -30,7 +30,7 @@ specialities:
       href: "https://www.flaronis.com"
     - label: "www.retaxa.com"
       href: "https://www.retaxa.com"
-  news_button_text: "Check out our &ldquo;Business Food&rdquo; news"
+  news_button_text: "Check out our “Business Food” news"
   news_button_href: "/food-business-news/"
 
 products:
@@ -59,7 +59,7 @@ products:
   retaxa_alt: "Retaxa"
 
 clients:
-  eyebrow: "In the Benelux, Germany, France, Russia, Romania, Estonia, Poland, South-America&hellip;"
+  eyebrow: "In the Benelux, Germany, France, Russia, Romania, Estonia, Poland, South-America…"
   heading: "Our clients"
   retail_chips:
     - "Edeka"
@@ -69,14 +69,14 @@ clients:
     - "Delhaize"
     - "Match"
     - "Smatch"
-    - "Intermarch&eacute;"
+    - "Intermarché"
     - "Cora"
     - "Super U"
     - "X5"
     - "Magnit"
     - "Lenta"
     - "Metro"
-  retail_note: "Edeka &mdash; biggest distribution group in Europe: 12 000 stores, 253 000 employees, 42 billion &euro; turnover."
+  retail_note: "Edeka — biggest distribution group in Europe: 12 000 stores, 253 000 employees, 42 billion € turnover."
   wholesaler_chips:
     - "Fixmer"
     - "Trendy Foods"
