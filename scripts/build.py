@@ -217,6 +217,30 @@ def IMG(path):
     return path
 
 
+YOUTUBE_ID_RE = re.compile(
+    r"(?:youtube\.com/(?:watch\?v=|embed/|shorts/)|youtu\.be/)([A-Za-z0-9_-]{6,})"
+)
+
+
+def youtube_embed(url):
+    """Renders a responsive YouTube embed from any pasted YouTube URL shape
+    (watch?v=, youtu.be/, embed/, shorts/) - returns '' if empty/unrecognized
+    so a missing/blank field never breaks the page."""
+    if not url:
+        return ""
+    m = YOUTUBE_ID_RE.search(url)
+    if not m:
+        return ""
+    video_id = m.group(1)
+    return (
+        '\n    <div class="video-embed">\n'
+        f'      <iframe src="https://www.youtube.com/embed/{video_id}" title="Video"\n'
+        '        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"\n'
+        '        loading="lazy" allowfullscreen></iframe>\n'
+        "    </div>"
+    )
+
+
 def photos_gallery_section(filenames, eyebrow="Photos", title="Gallery"):
     if not filenames:
         return ""
@@ -371,6 +395,7 @@ def build_sport():
 
     record_specs = "\n".join(spec_block(s) for s in d["record"]["specs"])
     coaching_specs = "\n".join(spec_block(s) for s in d["coaching"]["specs"])
+    coaching_video = youtube_embed(d["coaching"].get("video_url"))
     photos = "\n".join(
         f'      <figure><img loading="lazy" src="{IMG(p["file"])}" alt="{p["alt"]}"><figcaption>{p["caption"]}</figcaption></figure>'
         for p in d["gallery"]["photos"]
@@ -411,7 +436,7 @@ def build_sport():
     <h2>{d['coaching']['heading']}</h2>
     <div class="specs">
 {coaching_specs}
-    </div>
+    </div>{coaching_video}
   </div>
 </section>
 
