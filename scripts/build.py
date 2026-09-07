@@ -28,6 +28,7 @@ NAV_ITEMS = [
     ("News", "/news/", "news"),
     ("Jobs", "/jobs/", "jobs"),
     ("Contact", "/contact/", "contact"),
+    ("Personal Pictures", "/personalpictures/", "personalpictures"),
 ]
 
 
@@ -1026,7 +1027,7 @@ def build_personal_pictures():
   </div>
 </section>
 """
-    page("/personalpictures/", d["meta"]["title"], d["meta"]["description"], "home", body)
+    page("/personalpictures/", d["meta"]["title"], d["meta"]["description"], "personalpictures", body)
 
 
 build_personal_pictures()
