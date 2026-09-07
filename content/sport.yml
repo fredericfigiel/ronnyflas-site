@@ -21,31 +21,31 @@ record:
       sub: Good experience
       multiline: true
       body_html: >-
-        <ul>
+        <ul class="chips">
                     <li>Trained with Francois Toussaint (World Champion)</li>
                     <li>Trained with Hawking Cheung in Los Angeles</li>
                     <li>Ronny Flas teached Brandon Lee (son of Bruce Lee and main character of the movie “The Crow”) his first low kick at the Dany Innocento Academy (Los Angeles) !!!</li>
                   </ul>
     - key: Karate full contact
       sub: Black belt 3rd degree
-      body_html: "<ul><li>First Karate teacher: Salvatore Scarlata.</li></ul>"
+      body_html: "<ul class=\"chips\"><li>First Karate teacher: Salvatore Scarlata.</li></ul>"
     - key: Kick boxing
       sub: World champion
-      body_html: <ul><li>ISKA World Champion.</li></ul>
+      body_html: <ul class="chips"><li>ISKA World Champion.</li></ul>
     - key: Thai boxing
       sub: World champion
-      body_html: <ul><li>ISKA World Champion. Muay Thai pioneer in Belgium.</li></ul>
+      body_html: <ul class="chips"><li>ISKA World Champion. Muay Thai pioneer in Belgium.</li></ul>
 coaching:
   eyebrow: Coaching
   heading: Trainer & promoter
   specs:
     - key: Trainer
       sub: Kickboxing · Thai boxing · Boxing
-      body_html: <ul><li>World champions</li><li>European champions</li><li>Belgian
+      body_html: <ul class="chips"><li>World champions</li><li>European champions</li><li>Belgian
         champions</li></ul>
     - key: Promoter
       sub: ""
-      body_html: <ul><li>Promoter of the first biggest international event of Muay
+      body_html: <ul class="chips"><li>Promoter of the first biggest international event of Muay
         Thai in Belgium.</li></ul>
     - key: Personal trainer for
       sub: ""
@@ -57,7 +57,7 @@ coaching:
         full contact</li><li>Karate black belt 3rd degree diploma</li></ul>
     - key: Film industry
       sub: ""
-      body_html: <ul><li>Trainer for actor</li><li>Fight choreographer</li><li>Actor
+      body_html: <ul class="chips"><li>Trainer for actor</li><li>Fight choreographer</li><li>Actor
         in “Desert Kickboxer” (1992)</li></ul>
   video_url: https://www.youtube.com/watch?v=wrXeVU0pgdE
 gallery:
