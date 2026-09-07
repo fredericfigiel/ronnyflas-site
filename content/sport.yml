@@ -6,13 +6,13 @@ meta:
 pagehead:
   eyebrow: ISKA World Champion
   title: Sport
-  lede: Kung Fu Wing Chun · Karate full contact · Kick boxing · Thai boxing ·
+  lede: Karate Full Contact · Kick boxing · Thai boxing · Kung Fu Wing Chun ·
     Trainer · Promoter · Film industry.
   photo: /assets/img/dee777_b3d9961ecd1e76ee775a431a39a1cba2.png
   photo_alt: ISKA World Champion
 quote:
   eyebrow: My sport saying
-  text: “No religion. No racism. No politics. Just discipline and hard work !!!”
+  text: “No religion ! No racism ! No politics ! Just discipline and hard work !!!”
 record:
   eyebrow: Disciplines
   heading: Fighting record
@@ -28,25 +28,30 @@ record:
                   </ul>
     - key: Karate full contact
       sub: Black belt 3rd degree
-      body_html: "<ul class=\"chips\"><li>First Karate teacher: Salvatore Scarlata.</li></ul>"
+      body_html: |-
+        <ul class="chips"><li>First Karate teacher: Salvatore Scarlata. 
+
+        Main trainer (Howard Brown (World chamopiuon trainer)</li></ul>
     - key: Kick boxing
       sub: World champion
       body_html: <ul class="chips"><li>ISKA World Champion.</li></ul>
     - key: Thai boxing
       sub: World champion
-      body_html: <ul class="chips"><li>ISKA World Champion. Muay Thai pioneer in Belgium.</li></ul>
+      body_html: <ul class="chips"><li>ISKA World Champion. Muay Thai pioneer in
+        Belgium.</li></ul>
 coaching:
   eyebrow: Coaching
   heading: Trainer & promoter
   specs:
     - key: Trainer
-      sub: Kickboxing · Thai boxing · Boxing
-      body_html: <ul class="chips"><li>World champions</li><li>European champions</li><li>Belgian
-        champions</li></ul>
+      sub: Kickboxing · Thai boxing · Boxing · Dale Carnegie (Human relationship and
+        psychology)
+      body_html: <ul class="chips"><li>World champions</li><li>European
+        champions</li><li>Belgian champions</li></ul>
     - key: Promoter
       sub: ""
-      body_html: <ul class="chips"><li>Promoter of the first biggest international event of Muay
-        Thai in Belgium.</li></ul>
+      body_html: <ul class="chips"><li>Promoter of the first biggest international
+        event of Muay Thai in Belgium.</li></ul>
     - key: Personal trainer for
       sub: ""
       body_html: <ul class="chips"><li>VIP's & celebrities</li><li>Belgian
@@ -57,8 +62,8 @@ coaching:
         full contact</li><li>Karate black belt 3rd degree diploma</li></ul>
     - key: Film industry
       sub: ""
-      body_html: <ul class="chips"><li>Trainer for actor</li><li>Fight choreographer</li><li>Actor
-        in “Desert Kickboxer” (1992)</li></ul>
+      body_html: <ul class="chips"><li>Trainer for actor</li><li>Fight
+        choreographer</li><li>Actor in “Desert Kickboxer” (1992)</li></ul>
   video_url: https://www.youtube.com/watch?v=wrXeVU0pgdE
 gallery:
   eyebrow: Gallery
