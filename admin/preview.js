@@ -239,7 +239,6 @@
     var hero = d.hero || {};
     var latest = d.latest || {};
     var sections = d.sections || {};
-    var honours = d.honours || {};
     var contact = d.contact || {};
 
     var roles = (hero.roles || [])
@@ -283,12 +282,6 @@
       })
       .join("\n");
 
-    var honourItems = (honours.items || [])
-      .map(function (hh) {
-        return '<div class="honour"><div class="k">' + (hh.k || "") + '</div><div class="v">' + mdRender(hh.v, true) + "</div></div>";
-      })
-      .join("\n");
-
     return (
       '\n<header class="hero">\n  <div class="hero-in">\n    <h1 class="name">Ronny<span class="last">Flas</span></h1>\n    <p class="tagline">' +
       (hero.tagline || "") +
@@ -316,12 +309,6 @@
       (sections.heading || "") +
       '</h2>\n\n    <div class="domains">\n' +
       domains +
-      '\n    </div>\n  </div>\n</section>\n\n<section class="honours">\n  <div class="wrap">\n    <p class="eyebrow">' +
-      (honours.eyebrow || "") +
-      "</p>\n    <h2>" +
-      (honours.heading || "") +
-      '</h2>\n    <div class="honour-grid">\n' +
-      honourItems +
       '\n    </div>\n  </div>\n</section>\n\n<section class="contact">\n  <div class="wrap">\n    <p class="eyebrow">' +
       mdRender(contact.eyebrow_html, true) +
       "</p>\n    <h2>" +
@@ -347,7 +334,6 @@
           "En-tête (photo + accroche)",
           'Bloc "Latest" (actualité en avant)',
           'Section "Sport · Music · Food Business · Charity"',
-          'Section "Titles & credentials"',
           "Bloc Contact (bas de page d'accueil)",
         ]);
       },

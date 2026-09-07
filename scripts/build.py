@@ -307,11 +307,6 @@ def build_home():
       </article>"""
         for x in d["sections"]["domains"]
     )
-    honours = "\n".join(
-        f'      <div class="honour"><div class="k">{h["k"]}</div><div class="v">{md(h["v"], inline=True)}</div></div>'
-        for h in d["honours"]["items"]
-    )
-
     body = f"""
 <header class="hero">
   <div class="hero-in">
@@ -348,16 +343,6 @@ def build_home():
 
     <div class="domains">
 {domains}
-    </div>
-  </div>
-</section>
-
-<section class="honours">
-  <div class="wrap">
-    <p class="eyebrow">{d['honours']['eyebrow']}</p>
-    <h2>{d['honours']['heading']}</h2>
-    <div class="honour-grid">
-{honours}
     </div>
   </div>
 </section>

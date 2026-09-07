@@ -139,29 +139,6 @@ collections:
         - label: Lien du bouton
           name: button_href
           widget: string
-    - label: Section "Titles & credentials"
-      name: honours
-      widget: object
-      fields:
-      - label: Eyebrow
-        name: eyebrow
-        widget: string
-      - label: Titre
-        name: heading
-        widget: string
-      - label: Chiffres
-        name: items
-        widget: list
-        summary: '{{fields.k}} — {{fields.v}}'
-        fields:
-        - label: 'Valeur courte (ex: ISKA, 4, 5)'
-          name: k
-          widget: string
-        - label: Légende
-          name: v
-          widget: markdown
-          modes: [rich_text]
-          buttons: [bold, italic, link]
     - label: Bloc Contact (bas de page d'accueil)
       name: contact
       widget: object
