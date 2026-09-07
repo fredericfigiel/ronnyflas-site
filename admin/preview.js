@@ -471,13 +471,21 @@
     var fairs = d.fairs || {};
     var artists = d.artists || {};
 
-    var photoItems = (d.photos || [])
-      .map(function (p) {
-        return '<div class="frame hero-photo"><img src="' + asset(p.photo) + '" alt="' + (p.photo_alt || "") + '"></div>';
-      })
-      .join("\n");
-    var photosHtml = photoItems
-      ? '\n<section>\n  <div class="wrap">\n    <div class="photo-pair">\n' + photoItems + "\n    </div>\n  </div>\n</section>\n"
+    function photoBlock(photos) {
+      photos = photos || [];
+      if (!photos.length) return "";
+      var frames = photos
+        .map(function (p) {
+          return '<div class="frame hero-photo"><img src="' + asset(p.photo) + '" alt="' + (p.photo_alt || "") + '"></div>';
+        })
+        .join("\n");
+      var style = photos.length === 1 ? ' style="grid-template-columns:1fr;max-width:420px"' : "";
+      return '<div class="photo-pair"' + style + ">\n" + frames + "\n    </div>";
+    }
+
+    var heroPhotoBlock = photoBlock(d.photos);
+    var photosHtml = heroPhotoBlock
+      ? "\n<section>\n  <div class=\"wrap\">\n    " + heroPhotoBlock + "\n  </div>\n</section>\n"
       : "";
 
     var buttonsHtml = (artists.buttons || [])
@@ -501,13 +509,17 @@
       (studios.lede || "") +
       '</p>\n    <div class="specs">\n' +
       chipBlock(studios) +
-      '\n    </div>\n  </div>\n</section>\n\n<section class="alerts">\n  <div class="wrap">\n    <p class="eyebrow">' +
+      "\n    </div>\n    " +
+      photoBlock(studios.photos) +
+      '\n  </div>\n</section>\n\n<section class="alerts">\n  <div class="wrap">\n    <p class="eyebrow">' +
       (fairs.eyebrow || "") +
       "</p>\n    <h2>" +
       (fairs.heading || "") +
       '</h2>\n    <div class="specs">\n' +
       chipBlock(fairs) +
-      '\n    </div>\n  </div>\n</section>\n\n<section>\n  <div class="wrap">\n    <p class="eyebrow">' +
+      "\n    </div>\n    " +
+      photoBlock(fairs.photos) +
+      '\n  </div>\n</section>\n\n<section>\n  <div class="wrap">\n    <p class="eyebrow">' +
       (artists.eyebrow || "") +
       "</p>\n    <h2>" +
       (artists.heading || "") +

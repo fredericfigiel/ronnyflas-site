@@ -12,9 +12,6 @@ photos:
     photo_alt: Deal Signature with Rotana
   - photo_alt: Deal Signature with Rotana
     photo: /assets/img/ronny-signature-2.jpg
-numbers:
-  eyebrow: "-"
-  heading: "-"
 deals:
   eyebrow: Worldwide
   heading: International record deals
@@ -49,6 +46,7 @@ studios:
     - Le Labo Records (Paris — Quentin Bachelet)
     - Galaxy Studio (Belgium)
   wide_extra: and many others…
+  photos: []
 fairs:
   eyebrow: International music fair
   heading: Worldwide fairs
@@ -59,6 +57,7 @@ fairs:
     - MIDEM Hong Kong
     - MUSEXPO Los Angeles
   wide_extra: and many others…
+  photos: []
 artists:
   eyebrow: Artists produced — signed in many countries
   heading: Number 1 and numerous top 10

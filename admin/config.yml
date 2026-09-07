@@ -423,6 +423,19 @@ collections:
       - label: Texte de fin
         name: wide_extra
         widget: string
+      - label: Photos (2 max, affichées sous ce bloc)
+        name: photos
+        widget: list
+        summary: '{{fields.photo_alt}}'
+        max: 2
+        required: false
+        fields:
+        - label: Photo
+          name: photo
+          widget: image
+        - label: Texte alternatif de la photo
+          name: photo_alt
+          widget: string
     - label: Salons professionnels
       name: fairs
       widget: object
@@ -446,6 +459,19 @@ collections:
       - label: Texte de fin
         name: wide_extra
         widget: string
+      - label: Photo (affichée sous ce bloc)
+        name: photos
+        widget: list
+        summary: '{{fields.photo_alt}}'
+        max: 1
+        required: false
+        fields:
+        - label: Photo
+          name: photo
+          widget: image
+        - label: Texte alternatif de la photo
+          name: photo_alt
+          widget: string
     - label: Artistes / pays
       name: artists
       widget: object

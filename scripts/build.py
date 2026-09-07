@@ -472,11 +472,22 @@ build_sport()
 def build_music():
     d = load("music")
     ph = d["pagehead"]
-    photos = "\n".join(
-        f'      <div class="frame hero-photo"><img src="{IMG(p["photo"])}" alt="{p["photo_alt"]}"></div>'
-        for p in d.get("photos") or []
+    def photo_block(photos):
+        photos = photos or []
+        if not photos:
+            return ""
+        frames = "\n".join(
+            f'      <div class="frame hero-photo"><img src="{IMG(p["photo"])}" alt="{p["photo_alt"]}"></div>'
+            for p in photos
+        )
+        style = ' style="grid-template-columns:1fr;max-width:420px"' if len(photos) == 1 else ""
+        return f'<div class="photo-pair"{style}>\n{frames}\n    </div>'
+
+    hero_photos_html = (
+        f'\n<section>\n  <div class="wrap">\n    {photo_block(d.get("photos"))}\n  </div>\n</section>\n'
+        if d.get("photos")
+        else ""
     )
-    photos_html = f'\n<section>\n  <div class="wrap">\n    <div class="photo-pair">\n{photos}\n    </div>\n  </div>\n</section>\n' if photos else ""
 
     def chip_block(section):
         # NOTE: the live site hand-wraps these <li> tags irregularly across
@@ -509,7 +520,7 @@ def build_music():
     </div>
   </div>
 </header>
-{photos_html}
+{hero_photos_html}
 <section class="alerts">
   <div class="wrap">
     <p class="eyebrow">{d['deals']['eyebrow']}</p>
@@ -528,6 +539,7 @@ def build_music():
     <div class="specs">
 {chip_block(d['studios'])}
     </div>
+    {photo_block(d['studios'].get('photos'))}
   </div>
 </section>
 
@@ -538,6 +550,7 @@ def build_music():
     <div class="specs">
 {chip_block(d['fairs'])}
     </div>
+    {photo_block(d['fairs'].get('photos'))}
   </div>
 </section>
 
