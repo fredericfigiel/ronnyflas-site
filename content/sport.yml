@@ -6,13 +6,13 @@ meta:
 pagehead:
   eyebrow: "ISKA World Champion"
   title: "Sport"
-  lede: "Kung Fu Wing Chun &middot; Karate full contact &middot; Kick boxing &middot; Thai boxing &middot; Trainer &middot; Promoter &middot; Film industry."
+  lede: "Kung Fu Wing Chun · Karate full contact · Kick boxing · Thai boxing · Trainer · Promoter · Film industry."
   photo: "/assets/img/dee777_b3d9961ecd1e76ee775a431a39a1cba2.png"
   photo_alt: "ISKA World Champion"
 
 quote:
   eyebrow: "My sport saying"
-  text: "&ldquo;No religion. No racism. No politics. Just discipline and hard work !!!&rdquo;"
+  text: "“No religion. No racism. No politics. Just discipline and hard work !!!”"
 
 record:
   eyebrow: "Disciplines"
@@ -25,7 +25,7 @@ record:
         <ul>
                     <li>Trained with Francois Toussaint (World Champion)</li>
                     <li>Trained with Hawking Cheung in Los Angeles</li>
-                    <li>Ronny Flas teached Brandon Lee (son of Bruce Lee and main character of the movie &ldquo;The Crow&rdquo;) his first low kick at the Dany Innocento Academy (Los Angeles) !!!</li>
+                    <li>Ronny Flas teached Brandon Lee (son of Bruce Lee and main character of the movie “The Crow”) his first low kick at the Dany Innocento Academy (Los Angeles) !!!</li>
                   </ul>
     - key: "Karate full contact"
       sub: "Black belt 3rd degree"
@@ -39,27 +39,27 @@ record:
 
 coaching:
   eyebrow: "Coaching"
-  heading: "Trainer &amp; promoter"
+  heading: "Trainer & promoter"
   specs:
     - key: "Trainer"
-      sub: "Kickboxing &middot; Thai boxing &middot; Boxing"
+      sub: "Kickboxing · Thai boxing · Boxing"
       body_html: "<ul><li>World champions</li><li>European champions</li><li>Belgian champions</li></ul>"
     - key: "Promoter"
       sub: ""
       body_html: "<p>Promoter of the first biggest international event of Muay Thai in Belgium.</p>"
     - key: "Personal trainer for"
       sub: ""
-      body_html: "<ul class=\"chips\"><li>VIP's &amp; celebrities</li><li>Belgian police</li><li>Belgian military</li></ul>"
+      body_html: "<ul class=\"chips\"><li>VIP's & celebrities</li><li>Belgian police</li><li>Belgian military</li></ul>"
     - key: "Trainer certificates"
       sub: ""
       body_html: "<ul class=\"chips\"><li>Thai boxing</li><li>Kick boxing</li><li>Karate full contact</li><li>Karate black belt 3rd degree diploma</li></ul>"
     - key: "Film industry"
       sub: ""
-      body_html: "<ul><li>Trainer for actor</li><li>Fight choreographer</li><li>Actor in &ldquo;Desert Kickboxer&rdquo; (1992)</li></ul>"
+      body_html: "<ul><li>Trainer for actor</li><li>Fight choreographer</li><li>Actor in “Desert Kickboxer” (1992)</li></ul>"
 
 gallery:
   eyebrow: "Gallery"
-  heading: "Karate &middot; Wing Chun &middot; Ring"
+  heading: "Karate · Wing Chun · Ring"
   photos:
     - file: "/assets/img/dee777_6af14be36068421fa51e2c6f1cd59984~mv2.jpg"
       alt: "Ronny Flas at UFC Paris"
@@ -84,7 +84,7 @@ gallery:
       caption: "Just destroy it !"
     - file: "/assets/img/dee777_b7446ab30ac84afd8628ae7c3c734659~mv2_d_2337_1716_s_2.jpg"
       alt: "Ronny Flas in Desert Kickboxer"
-      caption: "Ronny Flas in &ldquo;Desert Kickboxer&rdquo;"
+      caption: "Ronny Flas in “Desert Kickboxer”"
     - file: "/assets/img/dee777_00d83cda016c526003811875ca4ecead.png"
       alt: "Ronny Flas, championship night"
       caption: "Championship night"

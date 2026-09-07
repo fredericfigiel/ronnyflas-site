@@ -4,7 +4,7 @@ meta:
   description: "ISKA world champion in kick boxing and thai boxing, producer, manager and publisher, owner of coffee and chocolate factories in Belgium and Luxembourg."
 
 hero:
-  tagline: "My life&hellip;"
+  tagline: "My life…"
   photo: "/assets/img/dee777_b3d9961ecd1e76ee775a431a39a1cba2.png"
   photo_alt: "Ronny Flas, ISKA World Champion"
   roles:
@@ -40,7 +40,7 @@ latest:
 
 sections:
   eyebrow: "Sections"
-  heading: "Sport &middot; Music &middot; Food Business &middot; Charity"
+  heading: "Sport · Music · Food Business · Charity"
   domains:
     - photo: "/assets/img/dee777_b3d9961ecd1e76ee775a431a39a1cba2.png"
       photo_alt: "ISKA World Champion"
@@ -48,12 +48,12 @@ sections:
       title: "Sport"
       desc: "ISKA World Champion. Kung Fu Wing Chun, karate full contact, kick boxing, thai boxing."
       facts:
-        - "Kick boxing &mdash; world champion"
-        - "Thai boxing &mdash; world champion"
-        - "Karate full contact &mdash; black belt 3rd degree"
+        - "Kick boxing — world champion"
+        - "Thai boxing — world champion"
+        - "Karate full contact — black belt 3rd degree"
         - "Trainer of world, European and Belgian champions"
-        - "Personal trainer for VIP's &amp; celebrities, Belgian police, Belgian military"
-        - "Actor in &ldquo;Desert Kickboxer&rdquo; (1992)"
+        - "Personal trainer for VIP's & celebrities, Belgian police, Belgian military"
+        - "Actor in “Desert Kickboxer” (1992)"
       button_text: "Sport"
       button_href: "/sport/"
     - photo: "/assets/img/dee777_ab1d9c80936e4ae8ab7370a037b6cb94~mv2.jpg"
@@ -62,10 +62,10 @@ sections:
       title: "Music"
       desc: "Ronny Flas is a producer, manager and publisher."
       facts:
-        - "International record deals &mdash; EMI, Sony, Warner, Universal International&hellip;"
-        - "Recording studio owner &mdash; Metropolis, Sound City, Gemini, ICP, Galaxy&hellip;"
-        - "MIDEM Cannes, Miami, Hong Kong &middot; MUSEXPO Los Angeles"
-        - "Artists produced &amp; signed in Belgium, France, Spain, Morocco, USA&hellip;"
+        - "International record deals — EMI, Sony, Warner, Universal International…"
+        - "Recording studio owner — Metropolis, Sound City, Gemini, ICP, Galaxy…"
+        - "MIDEM Cannes, Miami, Hong Kong · MUSEXPO Los Angeles"
+        - "Artists produced & signed in Belgium, France, Spain, Morocco, USA…"
       button_text: "Music"
       button_href: "/music/"
     - photo: "/assets/img/dee777_cfc050b51c7f754444c4071dd41f7258.png"
@@ -74,10 +74,10 @@ sections:
       title: "Food Business"
       desc: "Owner of several companies in the food business in Belgium, Luxembourg, Germany, Romania and Russia. Owner of his own coffee and chocolate factories."
       facts:
-        - "Belgian chocolate &middot; wine &middot; sparkling wine &middot; coffee &middot; confectionary"
-        - "Retail: Edeka, Carrefour, Auchan, Delhaize, Cactus, Metro&hellip;"
+        - "Belgian chocolate · wine · sparkling wine · coffee · confectionary"
+        - "Retail: Edeka, Carrefour, Auchan, Delhaize, Cactus, Metro…"
         - "Gas stations: Shell, Total, Aral, Esso, Q8, Texaco"
-        - "flaronis.com &middot; retaxa.com"
+        - "flaronis.com · retaxa.com"
       button_text: "Food Business"
       button_href: "/food-business-career/"
     - photo: "/assets/img/dee777_f9053852ba554be2990068db6e66e82c~mv2.jpg"
@@ -87,13 +87,13 @@ sections:
       desc: "Ronny Flas is actively engaged in the protection of animals and especially in the defense of abused animals as well as in other sectors."
       facts:
         - "Numerous animals saved from unacceptable living conditions"
-        - "Support for the APRP 67 &mdash; parrot protection"
+        - "Support for the APRP 67 — parrot protection"
         - "Share info or bring support: ronny.flas@gmail.com"
       button_text: "Charity"
       button_href: "/charity/"
 
 honours:
-  eyebrow: "Titles &amp; credentials"
+  eyebrow: "Titles & credentials"
   heading: "The record"
   items:
     - k: "ISKA"
@@ -101,12 +101,12 @@ honours:
     - k: "3rd Dan"
       v: "Karate full contact<br>black belt"
     - k: "4"
-      v: "Major labels &mdash; international deals<br>EMI &middot; Sony &middot; Warner &middot; Universal"
+      v: "Major labels — international deals<br>EMI · Sony · Warner · Universal"
     - k: "5"
-      v: "Countries &mdash; Belgium, Luxembourg,<br>Germany, Romania, Russia"
+      v: "Countries — Belgium, Luxembourg,<br>Germany, Romania, Russia"
 
 contact:
-  eyebrow_html: '<a href="/castings/">Castings</a> &middot; <a href="/music-consulting/">Music consulting</a> &middot; <a href="/jobs/">Jobs</a>'
+  eyebrow_html: '<a href="/castings/">Castings</a> · <a href="/music-consulting/">Music consulting</a> · <a href="/jobs/">Jobs</a>'
   heading: "Contact"
   email: "ronny.flas@gmail.com"
   button_text: "Contact"
