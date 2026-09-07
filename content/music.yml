@@ -8,18 +8,7 @@ pagehead:
   title: "Music"
   lede: "Producer · Manager · Publisher"
 
-numbers:
-  eyebrow: "The numbers"
-  heading: "Producer · Manager · Publisher"
-  items:
-    - k: "4"
-      v: "Majors — EMI, Sony,<br>Warner, Universal"
-    - k: "6"
-      v: "Recording studios —<br>London, LA, Brussels, Paris…"
-    - k: "4"
-      v: "International music fairs —<br>MIDEM, MUSEXPO"
-    - k: "7+"
-      v: "Countries — artists produced<br>& signed worldwide"
+photos: []
 
 deals:
   eyebrow: "Worldwide"
