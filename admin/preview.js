@@ -279,7 +279,7 @@
     return (
       '\n<header class="hero">\n  <div class="hero-in">\n    <h1 class="name">Ronny<span class="last">Flas</span></h1>\n    <p class="tagline">' +
       (hero.tagline || "") +
-      '</p>\n    <div class="hero-photos">\n' +
+      '</p>\n    <div class="photo-pair">\n' +
       heroPhotos +
       '\n    </div>\n    <ul class="roles">\n' +
       roles +
@@ -450,17 +450,19 @@
 
   function musicBody(d) {
     var ph = d.pagehead || {};
-    var numbers = d.numbers || {};
     var deals = d.deals || {};
     var studios = d.studios || {};
     var fairs = d.fairs || {};
     var artists = d.artists || {};
 
-    var numberItems = (numbers.items || [])
-      .map(function (n) {
-        return '<div class="honour"><div class="k">' + (n.k || "") + '</div><div class="v">' + mdRender(n.v, true) + "</div></div>";
+    var photoItems = (d.photos || [])
+      .map(function (p) {
+        return '<div class="frame hero-photo"><img src="' + asset(p.photo) + '" alt="' + (p.photo_alt || "") + '"></div>';
       })
       .join("\n");
+    var photosHtml = photoItems
+      ? '\n<section>\n  <div class="wrap">\n    <div class="photo-pair">\n' + photoItems + "\n    </div>\n  </div>\n</section>\n"
+      : "";
 
     var buttonsHtml = (artists.buttons || [])
       .map(function (b) { return '<a class="btn" href="' + (b.href || "#") + '">' + (b.text || "") + "</a>"; })
@@ -468,13 +470,8 @@
 
     return (
       pageheadHtml(ph.eyebrow, ph.title, ph.lede) +
-      '\n<section>\n  <div class="wrap">\n    <p class="eyebrow">' +
-      (numbers.eyebrow || "") +
-      "</p>\n    <h2>" +
-      (numbers.heading || "") +
-      '</h2>\n    <div class="honour-grid">\n' +
-      numberItems +
-      '\n    </div>\n  </div>\n</section>\n\n<section class="alerts">\n  <div class="wrap">\n    <p class="eyebrow">' +
+      photosHtml +
+      '\n<section class="alerts">\n  <div class="wrap">\n    <p class="eyebrow">' +
       (deals.eyebrow || "") +
       "</p>\n    <h2>" +
       (deals.heading || "") +
@@ -513,7 +510,7 @@
         var d = toData(this.props.entry);
         return frame(safe(function () { return musicBody(d); }), [
           "En-tête de page",
-          "Bloc chiffres clés",
+          "Photos",
           "Contrats internationaux",
           "Studios d'enregistrement",
           "Salons professionnels",

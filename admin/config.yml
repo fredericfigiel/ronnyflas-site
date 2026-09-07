@@ -356,29 +356,19 @@ collections:
       - label: Sous-titre / lede
         name: lede
         widget: text
-    - label: Bloc chiffres clés
-      name: numbers
-      widget: object
+    - label: Photos (affichées côte à côte, avant les contrats internationaux)
+      name: photos
+      widget: list
+      summary: '{{fields.photo_alt}}'
+      max: 2
+      required: false
       fields:
-      - label: Eyebrow
-        name: eyebrow
+      - label: Photo
+        name: photo
+        widget: image
+      - label: Texte alternatif de la photo
+        name: photo_alt
         widget: string
-      - label: Titre
-        name: heading
-        widget: string
-      - label: Chiffres
-        name: items
-        widget: list
-        summary: '{{fields.k}} — {{fields.v}}'
-        fields:
-        - label: Valeur courte
-          name: k
-          widget: string
-        - label: Légende
-          name: v
-          widget: markdown
-          modes: [rich_text]
-          buttons: [bold, italic, link]
     - label: Contrats internationaux
       name: deals
       widget: object

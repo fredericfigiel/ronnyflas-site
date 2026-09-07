@@ -293,7 +293,7 @@ def build_home():
   <div class="hero-in">
     <h1 class="name">Ronny<span class="last">Flas</span></h1>
     <p class="tagline">{d['hero']['tagline']}</p>
-    <div class="hero-photos">
+    <div class="photo-pair">
 {hero_photos}
     </div>
     <ul class="roles">
@@ -447,10 +447,11 @@ build_sport()
 def build_music():
     d = load("music")
     ph = d["pagehead"]
-    numbers = "\n".join(
-        f'      <div class="honour"><div class="k">{n["k"]}</div><div class="v">{md(n["v"], inline=True)}</div></div>'
-        for n in d["numbers"]["items"]
+    photos = "\n".join(
+        f'      <div class="frame hero-photo"><img src="{IMG(p["photo"])}" alt="{p["photo_alt"]}"></div>'
+        for p in d.get("photos") or []
     )
+    photos_html = f'\n<section>\n  <div class="wrap">\n    <div class="photo-pair">\n{photos}\n    </div>\n  </div>\n</section>\n' if photos else ""
 
     def chip_block(section):
         # NOTE: the live site hand-wraps these <li> tags irregularly across
@@ -483,17 +484,7 @@ def build_music():
     </div>
   </div>
 </header>
-
-<section>
-  <div class="wrap">
-    <p class="eyebrow">{d['numbers']['eyebrow']}</p>
-    <h2>{d['numbers']['heading']}</h2>
-    <div class="honour-grid">
-{numbers}
-    </div>
-  </div>
-</section>
-
+{photos_html}
 <section class="alerts">
   <div class="wrap">
     <p class="eyebrow">{d['deals']['eyebrow']}</p>
