@@ -76,7 +76,7 @@ def head(title, description, canonical):
 <link rel="canonical" href="{DOMAIN}{canonical}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800&family=Barlow:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800&family=Barlow:wght@400;500;600&family=Jost:wght@300;400&display=swap">
 <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
@@ -263,6 +263,10 @@ def build_home():
         + '</a></li>'
         for r in d["hero"]["roles"]
     )
+    hero_photos = "\n".join(
+        f'      <div class="frame hero-photo"><img src="{IMG(p["photo"])}" alt="{p["photo_alt"]}"></div>'
+        for p in d["hero"]["photos"]
+    )
     alert_paras = "\n".join(f"      <p>{md(p, inline=True)}</p>" for p in d["latest"]["alert_paragraphs"])
     domains = "\n\n".join(
         f"""      <article class="domain">
@@ -286,16 +290,14 @@ def build_home():
     body = f"""
 <header class="hero">
   <div class="hero-in">
-    <div>
-      <h1 class="name">Ronny<span class="last">Flas</span></h1>
-      <p class="tagline">{d['hero']['tagline']}</p>
-      <ul class="roles">
+    <h1 class="name">Ronny<span class="last">Flas</span></h1>
+    <p class="tagline">{d['hero']['tagline']}</p>
+    <div class="hero-photos">
+{hero_photos}
+    </div>
+    <ul class="roles">
 {roles}
-      </ul>
-    </div>
-    <div class="frame hero-photo">
-      <img src="{IMG(d['hero']['photo'])}" alt="{d['hero']['photo_alt']}">
-    </div>
+    </ul>
   </div>
 </header>
 

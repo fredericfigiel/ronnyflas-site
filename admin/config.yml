@@ -28,20 +28,26 @@ collections:
       - label: Description (SEO)
         name: description
         widget: text
-    - label: En-tête (photo + accroche)
+    - label: En-tête (titre, photos, accroche)
       name: hero
       widget: object
       fields:
       - label: Accroche
         name: tagline
         widget: string
-        hint: 'HTML simple autorisé (ex: &hellip;)'
-      - label: Photo
-        name: photo
-        widget: image
-      - label: Texte alternatif de la photo
-        name: photo_alt
-        widget: string
+      - label: Photos (affichées côte à côte sous le titre)
+        name: photos
+        widget: list
+        summary: '{{fields.photo_alt}}'
+        min: 2
+        max: 2
+        fields:
+        - label: Photo
+          name: photo
+          widget: image
+        - label: Texte alternatif de la photo
+          name: photo_alt
+          widget: string
       - label: Rôles / liens (Sportsman, Music producer, etc.)
         name: roles
         widget: list
