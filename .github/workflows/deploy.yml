@@ -1,0 +1,68 @@
+name: Build and deploy site
+
+# Se déclenche à chaque modification poussée sur main (y compris les
+# modifications faites depuis l'interface Decap CMS sur /admin/, qui
+# commit directement sur cette branche). Régénère les pages HTML à partir
+# des fichiers content/*.yml, puis publie le résultat sur GitHub Pages.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Build site from content/*.yml
+        run: python3 scripts/build.py
+
+      # On ne publie pas le dépôt tel quel : content/, scripts/ et
+      # l'historique git ne doivent pas devenir des fichiers publics du
+      # site. On copie uniquement les pages générées + assets/ + admin/
+      # dans un dossier propre avant de le publier.
+      - name: Prepare deploy folder
+        run: |
+          mkdir -p _deploy
+          rsync -a \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='content' \
+            --exclude='scripts' \
+            --exclude='_deploy' \
+            . _deploy/
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _deploy
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

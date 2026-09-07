@@ -1,0 +1,12 @@
+# Page: /contact/
+meta:
+  title: "CONTACT | ronnyflas"
+  description: "Contact Ronny Flas by email."
+
+pagehead:
+  eyebrow: "Castings &middot; Music consulting &middot; Jobs"
+  title: "Contact"
+  lede: "Send me your message by email."
+
+body:
+  lede: 'Send me your message by email at <a class="mailto" href="mailto:ronny.flas@gmail.com">ronny.flas@gmail.com</a>.'

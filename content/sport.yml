@@ -1,0 +1,97 @@
+# Page: /sport/
+meta:
+  title: "Sport - Ronny Flas | ISKA World Champion"
+  description: "Kick boxing and thai boxing world champion, karate full contact black belt 3rd degree. Trainer of world, European and Belgian champions. Actor in Desert Kickboxer (1992)."
+
+pagehead:
+  eyebrow: "ISKA World Champion"
+  title: "Sport"
+  lede: "Kung Fu Wing Chun &middot; Karate full contact &middot; Kick boxing &middot; Thai boxing &middot; Trainer &middot; Promoter &middot; Film industry."
+  photo: "/assets/img/dee777_b3d9961ecd1e76ee775a431a39a1cba2.png"
+  photo_alt: "ISKA World Champion"
+
+quote:
+  eyebrow: "My sport saying"
+  text: "&ldquo;No religion. No racism. No politics. Just discipline and hard work !!!&rdquo;"
+
+record:
+  eyebrow: "Disciplines"
+  heading: "Fighting record"
+  specs:
+    - key: "Kung Fu Wing Chun"
+      sub: "Good experience"
+      multiline: true
+      body_html: |-
+        <ul>
+                    <li>Trained with Francois Toussaint (World Champion)</li>
+                    <li>Trained with Hawking Cheung in Los Angeles</li>
+                    <li>Ronny Flas teached Brandon Lee (son of Bruce Lee and main character of the movie &ldquo;The Crow&rdquo;) his first low kick at the Dany Innocento Academy (Los Angeles) !!!</li>
+                  </ul>
+    - key: "Karate full contact"
+      sub: "Black belt 3rd degree"
+      body_html: "<p>First Karate teacher: Salvatore Scarlata.</p>"
+    - key: "Kick boxing"
+      sub: "World champion"
+      body_html: "<p>ISKA World Champion.</p>"
+    - key: "Thai boxing"
+      sub: "World champion"
+      body_html: "<p>ISKA World Champion. Muay Thai pioneer in Belgium.</p>"
+
+coaching:
+  eyebrow: "Coaching"
+  heading: "Trainer &amp; promoter"
+  specs:
+    - key: "Trainer"
+      sub: "Kickboxing &middot; Thai boxing &middot; Boxing"
+      body_html: "<ul><li>World champions</li><li>European champions</li><li>Belgian champions</li></ul>"
+    - key: "Promoter"
+      sub: ""
+      body_html: "<p>Promoter of the first biggest international event of Muay Thai in Belgium.</p>"
+    - key: "Personal trainer for"
+      sub: ""
+      body_html: "<ul class=\"chips\"><li>VIP's &amp; celebrities</li><li>Belgian police</li><li>Belgian military</li></ul>"
+    - key: "Trainer certificates"
+      sub: ""
+      body_html: "<ul class=\"chips\"><li>Thai boxing</li><li>Kick boxing</li><li>Karate full contact</li><li>Karate black belt 3rd degree diploma</li></ul>"
+    - key: "Film industry"
+      sub: ""
+      body_html: "<ul><li>Trainer for actor</li><li>Fight choreographer</li><li>Actor in &ldquo;Desert Kickboxer&rdquo; (1992)</li></ul>"
+
+gallery:
+  eyebrow: "Gallery"
+  heading: "Karate &middot; Wing Chun &middot; Ring"
+  photos:
+    - file: "/assets/img/dee777_6af14be36068421fa51e2c6f1cd59984~mv2.jpg"
+      alt: "Ronny Flas at UFC Paris"
+      caption: "Ronny Flas @ UFC Paris"
+    - file: "/assets/img/dee777_65a7212970044ce8abf510b783decb24~mv2_d_1512_2341_s_2.jpg"
+      alt: "Karate"
+      caption: "Karate"
+    - file: "/assets/img/dee777_801b1906ceaf4b27a6be60ee267e24ce~mv2_d_1308_2142_s_2.jpg"
+      alt: "Wing Chun Kung Fu"
+      caption: "Wing Chun Kung Fu"
+    - file: "/assets/img/dee777_2936aacdbead477b8dbda6ad19f3fe63~mv2_d_1631_1388_s_2.jpg"
+      alt: "Ronny Flas congratulated by the mayor of his city"
+      caption: "Ronny Flas congratulated by the mayor of his city."
+    - file: "/assets/img/dee777_283098b698f74029baf805de486c61fc~mv2_d_1532_1513_s_2.jpg"
+      alt: "Hard Kick Boxing Training"
+      caption: "Hard Kick Boxing Training"
+    - file: "/assets/img/dee777_7c5f4fbc21f04471b9b110ad20b45afa~mv2_d_2319_2721_s_2.jpg"
+      alt: "My first Karate teacher Salvatore Scarlata"
+      caption: "My first Karate teacher Salvatore Scarlata"
+    - file: "/assets/img/dee777_fa4ba5e5c7ae4a54b779204ef11ca01a~mv2_d_1960_1793_s_2.jpg"
+      alt: "Just destroy it"
+      caption: "Just destroy it !"
+    - file: "/assets/img/dee777_b7446ab30ac84afd8628ae7c3c734659~mv2_d_2337_1716_s_2.jpg"
+      alt: "Ronny Flas in Desert Kickboxer"
+      caption: "Ronny Flas in &ldquo;Desert Kickboxer&rdquo;"
+    - file: "/assets/img/dee777_00d83cda016c526003811875ca4ecead.png"
+      alt: "Ronny Flas, championship night"
+      caption: "Championship night"
+
+news_teaser:
+  eyebrow: "Latest"
+  heading: "Sport news"
+  lede: "Ronny Flas' latest sport and coaching news."
+  button_text: "Sport news"
+  button_href: "/sport-news/"
