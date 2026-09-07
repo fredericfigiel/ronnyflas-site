@@ -52,7 +52,12 @@
     ".preview-topbar{background:#111;color:#fff;padding:14px 20px;font-family:'Big Shoulders Display',sans-serif;" +
       "font-weight:700;font-size:20px;letter-spacing:.02em}" +
       ".preview-topbar em{font-style:normal;opacity:.65}" +
-      ".preview-wrap{min-height:100%}",
+      ".preview-wrap{min-height:100%}" +
+      // Survolez une partie de l'aperçu : elle se surligne et une bulle
+      // d'aide (l'attribut "title" du navigateur) indique dans quel champ
+      // du formulaire, à gauche, se trouve ce contenu.
+      ".cms-field-tag{outline-offset:3px;cursor:help;transition:outline-color .1s}" +
+      ".cms-field-tag:hover{outline:2px dashed #2563eb}",
     { raw: true }
   );
 
@@ -145,13 +150,38 @@
 
   /** Wraps a raw HTML string body into the React tree Decap expects, with a
    * small static top bar above it (no real nav - this is a content preview,
-   * not a site-navigation preview). */
-  function frame(bodyHtml) {
+   * not a site-navigation preview).
+   *
+   * `sectionLabels`, if given, is an array of French field-group labels (the
+   * same wording as the matching `label:` in admin/config.yml) in the exact
+   * order the page's top-level <header>/<section> blocks appear in
+   * `bodyHtml`. Once mounted, each top-level block gets tagged so hovering
+   * it in the preview highlights it and shows (via the browser's native
+   * title tooltip) which form section to edit - a full click-to-jump isn't
+   * something Decap exposes a stable way to build, this is the reliable
+   * middle ground. */
+  function frame(bodyHtml, sectionLabels) {
     return h(
       "div",
       { className: "preview-wrap" },
       topbar(),
-      h("div", { dangerouslySetInnerHTML: { __html: bodyHtml || "" } })
+      h("div", {
+        dangerouslySetInnerHTML: { __html: bodyHtml || "" },
+        ref: function (el) {
+          if (!el || !sectionLabels || !sectionLabels.length) return;
+          try {
+            var children = el.children;
+            for (var i = 0; i < children.length && i < sectionLabels.length; i++) {
+              if (!sectionLabels[i]) continue;
+              children[i].classList.add("cms-field-tag");
+              children[i].setAttribute("title", "Modifier dans : " + sectionLabels[i]);
+            }
+          } catch (e) {
+            // Le surlignage est un bonus - une erreur ici ne doit jamais
+            // empêcher l'aperçu lui-même de s'afficher.
+          }
+        },
+      })
     );
   }
 
@@ -271,7 +301,13 @@
     createClass({
       render: function () {
         var d = toData(this.props.entry);
-        return frame(safe(function () { return homeBody(d); }));
+        return frame(safe(function () { return homeBody(d); }), [
+          "En-tête (photo + accroche)",
+          'Bloc "Latest" (actualité en avant)',
+          'Section "Sport · Music · Food Business · Charity"',
+          'Section "Titles & credentials"',
+          "Bloc Contact (bas de page d'accueil)",
+        ]);
       },
     })
   );
@@ -353,7 +389,14 @@
     createClass({
       render: function () {
         var d = toData(this.props.entry);
-        return frame(safe(function () { return sportBody(d); }));
+        return frame(safe(function () { return sportBody(d); }), [
+          "En-tête de page",
+          "Citation",
+          "Palmarès (disciplines)",
+          "Coaching / promotion",
+          "Galerie photos",
+          'Bandeau "Sport news"',
+        ]);
       },
     })
   );
@@ -438,7 +481,14 @@
     createClass({
       render: function () {
         var d = toData(this.props.entry);
-        return frame(safe(function () { return musicBody(d); }));
+        return frame(safe(function () { return musicBody(d); }), [
+          "En-tête de page",
+          "Bloc chiffres clés",
+          "Contrats internationaux",
+          "Studios d'enregistrement",
+          "Salons professionnels",
+          "Artistes / pays",
+        ]);
       },
     })
   );
@@ -532,7 +582,12 @@
     createClass({
       render: function () {
         var d = toData(this.props.entry);
-        return frame(safe(function () { return foodBusinessBody(d); }));
+        return frame(safe(function () { return foodBusinessBody(d); }), [
+          "En-tête de page",
+          "Spécialités",
+          "Nos produits",
+          "Nos clients",
+        ]);
       },
     })
   );
@@ -566,7 +621,7 @@
     createClass({
       render: function () {
         var d = toData(this.props.entry);
-        return frame(safe(function () { return charityBody(d); }));
+        return frame(safe(function () { return charityBody(d); }), ["En-tête de page", "Corps de la page"]);
       },
     })
   );
@@ -592,7 +647,7 @@
     createClass({
       render: function () {
         var d = toData(this.props.entry);
-        return frame(safe(function () { return newsBody(d); }));
+        return frame(safe(function () { return newsBody(d); }), ["En-tête de page", "Liens vers les 5 rubriques"]);
       },
     })
   );
@@ -625,7 +680,7 @@
     createClass({
       render: function () {
         var d = toData(this.props.entry);
-        return frame(safe(function () { return castingsBody(d); }));
+        return frame(safe(function () { return castingsBody(d); }), ["En-tête de page", "Annonce"]);
       },
     })
   );
@@ -656,7 +711,11 @@
       createClass({
         render: function () {
           var d = toData(this.props.entry);
-          return frame(safe(function () { return newsPageBody(d); }));
+          return frame(safe(function () { return newsPageBody(d); }), [
+            "En-tête de page",
+            "Actualités (une entrée = un encart) + Bouton retour",
+            "Galerie photo",
+          ]);
         },
       })
     );
@@ -791,7 +850,14 @@
     createClass({
       render: function () {
         var d = toData(this.props.entry);
-        return frame(safe(function () { return charityNewsBody(d); }));
+        return frame(safe(function () { return charityNewsBody(d); }), [
+          "En-tête de page",
+          "Alertes en haut de page (ex: Bibi, Leo)",
+          "Actions régulières",
+          "Autres causes soutenues",
+          "Protection des insectes",
+          "Organisations soutenues",
+        ]);
       },
     })
   );
@@ -839,7 +905,11 @@
     createClass({
       render: function () {
         var d = toData(this.props.entry);
-        return frame(safe(function () { return jobsBody(d); }));
+        return frame(safe(function () { return jobsBody(d); }), [
+          "En-tête de page",
+          "Candidature spontanée",
+          "Postes ouverts",
+        ]);
       },
     })
   );
@@ -863,7 +933,7 @@
     createClass({
       render: function () {
         var d = toData(this.props.entry);
-        return frame(safe(function () { return contactBody(d); }));
+        return frame(safe(function () { return contactBody(d); }), ["En-tête de page", "Corps de la page"]);
       },
     })
   );
@@ -897,7 +967,7 @@
     createClass({
       render: function () {
         var d = toData(this.props.entry);
-        return frame(safe(function () { return personalPicturesBody(d); }));
+        return frame(safe(function () { return personalPicturesBody(d); }), ["En-tête de page", "Photos"]);
       },
     })
   );
@@ -925,7 +995,7 @@
     createClass({
       render: function () {
         var d = toData(this.props.entry);
-        return frame(safe(function () { return musicConsultingBody(d); }));
+        return frame(safe(function () { return musicConsultingBody(d); }), ["En-tête de page", "Corps de la page"]);
       },
     })
   );
