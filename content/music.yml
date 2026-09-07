@@ -44,6 +44,7 @@ studios:
     - "Le Labo Records (Paris — Quentin Bachelet)"
     - "Galaxy Studio (Belgium)"
   wide_extra: "and many others…"
+  photos: []
 
 fairs:
   eyebrow: "International music fair"
@@ -55,6 +56,7 @@ fairs:
     - "MIDEM Hong Kong"
     - "MUSEXPO Los Angeles"
   wide_extra: "and many others…"
+  photos: []
 
 artists:
   eyebrow: "Artists produced — signed in many countries"
