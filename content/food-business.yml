@@ -39,7 +39,7 @@ specialities:
   news_button_href: /food-business-news/
 products:
   eyebrow: A few of our ranges
-  heading: Our products
+  heading: Some of our products
   photos:
     - file: /assets/img/1194-truffes_cacao_2017.jpg
       alt: Belgian chocolate truffles
@@ -79,7 +79,7 @@ clients:
     - Lenta
     - Metro
     - "AND MANY OTHERS... "
-  retail_note: ""
+  retail_note: And many others...
   wholesaler_chips:
     - Fixmer
     - Trendy Foods
