@@ -31,7 +31,7 @@ record:
       body_html: |-
         <ul class="chips"><li>First Karate teacher: Salvatore Scarlata. 
 
-        Main trainer : Howard Brown (World champion trainer)</li></ul>
+        Main trainer : Howard Brown (World Champions trainer)</li></ul>
     - key: Kick boxing
       sub: World champion
       body_html: <ul class="chips"><li>ISKA World Champion.</li></ul>
