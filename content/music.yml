@@ -76,15 +76,22 @@ artists:
     - The Netherlands
     - Congo
     - USA
-  wide_extra: and many others…
+  wide_extra: AND MANY OTHERS...
   buttons:
     - text: Music news
       href: /music-news/
     - text: Music consulting
       href: /music-consulting/
 video_producer:
-  eyebrow: ""
-  heading: Music Video Producer
-  lede: "Producer of many music video for various artists in many locations around
-    the World : Los Angeles, Miami, UK, Germany, Belgium,..."
+  eyebrow: Music Video Producer
+  heading: Producer of many music video's for various artists in many locations
+    around the World
+  lede: |-
+    Los Angeles\
+    Miami\
+    UK\
+    France\
+    Germany\
+    Belgium\
+    And many others ...
   photos: []
