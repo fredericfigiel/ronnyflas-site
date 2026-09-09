@@ -23,6 +23,11 @@ regular:
   eyebrow: Please support with me
   heading: Regular charity actions from Ronny Flas
   causes:
+  - key: The Smile Train
+    photo_kind: smiletrain
+    photo: /assets/img/dee777_d7e78d2176c147708561d4dd247888de~mv2.jpg
+    photo_alt: The Smile Train
+    text_html: 'Ronny Flas actively and regularly supports “The Smile Train” association whose vision is to give every child with a cleft the opportunity for a healthy, productive life.<br>More info on: <a href="https://www.smiletrain.org/our-cause">https://www.smiletrain.org/our-cause</a>'
   - key: CBM
     photo_kind: logo
     photo: /assets/img/dee777_ce207098a5ea4604afb897f7b2a6fb60~mv2.png
@@ -76,11 +81,6 @@ insects:
   - file: /assets/img/dee777_3aba61e178f743b186a762e7646ec664~mv2.jpg
     alt: Insect hotel
   causes:
-  - key: The Smile Train
-    photo_kind: smiletrain
-    photo: /assets/img/dee777_d7e78d2176c147708561d4dd247888de~mv2.jpg
-    photo_alt: The Smile Train
-    text_html: 'Ronny Flas actively and regularly supports “The Smile Train” association whose vision is to give every child with a cleft the opportunity for a healthy, productive life.<br>More info on: <a href="https://www.smiletrain.org/our-cause">https://www.smiletrain.org/our-cause</a>'
   - key: Le Parc Australien
     photo_kind: null
     photo: ''

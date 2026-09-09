@@ -495,6 +495,22 @@ def build_music():
         f'<a class="btn" href="{b["href"]}">{b["text"]}</a>' for b in d["artists"]["buttons"]
     )
 
+    vp = d.get("video_producer") or {}
+    video_producer_html = (
+        f"""
+<section>
+  <div class="wrap">
+{f'    <p class="eyebrow">{vp["eyebrow"]}</p>' if vp.get("eyebrow") else ""}
+    <h2>{vp['heading']}</h2>
+{f'    <p class="lede">{md(vp["lede"], inline=True)}</p>' if vp.get("lede") else ""}
+    {photo_block(vp.get("photos"))}
+  </div>
+</section>
+"""
+        if vp.get("heading")
+        else ""
+    )
+
     body = f"""
 <header class="pagehead">
   <div class="pagehead-in" style="grid-template-columns:1fr">
@@ -549,7 +565,7 @@ def build_music():
     <p style="margin-top:26px">{buttons_html}</p>
   </div>
 </section>
-"""
+{video_producer_html}"""
 
     page("/music/", d["meta"]["title"], d["meta"]["description"], "music", body)
 

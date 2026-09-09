@@ -483,6 +483,37 @@ collections:
         - label: Lien
           name: href
           widget: string
+    - label: Music Video Producer
+      name: video_producer
+      widget: object
+      required: false
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Titre
+        name: heading
+        widget: string
+      - label: Texte
+        name: lede
+        widget: markdown
+        modes: [rich_text]
+        buttons: [bold, italic, link]
+        required: false
+      - label: Photos (2 max)
+        name: photos
+        widget: list
+        summary: '{{fields.photo_alt}}'
+        max: 2
+        required: false
+        fields:
+        - label: Photo
+          name: photo
+          widget: image
+        - label: Texte alternatif de la photo
+          name: photo_alt
+          widget: string
   - file: content/food-business.yml
     label: Food Business
     name: food-business
