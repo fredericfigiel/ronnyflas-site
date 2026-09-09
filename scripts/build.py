@@ -201,6 +201,11 @@ def md(text, inline=False):
     """
     if not text:
         return ""
+    # Decap's rich-text widget serializes a soft line break (Shift+Enter) as
+    # a trailing "\" (CommonMark hard-break syntax), which Python-Markdown's
+    # core doesn't recognise - it only treats a line ending in two spaces as
+    # a hard break. Normalise to that form first so both render as <br>.
+    text = re.sub(r"\\\n", "  \n", text)
     rendered = markdown.markdown(text).strip()
     if inline and rendered.startswith("<p>") and rendered.endswith("</p>"):
         inner = rendered[len("<p>"):-len("</p>")]
