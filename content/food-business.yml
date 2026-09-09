@@ -60,8 +60,8 @@ products:
       alt: Coffee Pads
     - file: /assets/img/7012-casa_colon_capsulers_dolce_gusto_caffe_latte-klein.jpg
       alt: Dolce Gusto compatible capsules
-  retaxa_photo: /assets/img/438-vida-nova-bio-transfair-100g-löslich.jpg
-  retaxa_alt: Instant Coffee
+  retaxa_photo: /assets/img/d617a2a5a2a140b980a9a3cdd53fd575.jpg
+  retaxa_alt: Made in Belgium Chocolate
 clients:
   eyebrow: In Belgium, Luxembourg, The Netherlands, Germany, France, Russia,
     Romania, Estonia, Poland, Mongolia, Cameroun, South-America…
@@ -85,6 +85,7 @@ clients:
     - Fixmer
     - Trendy Foods
     - AND MANY OTHERS...
+    - LYRECO
   gas_station_chips:
     - Shell
     - Total
