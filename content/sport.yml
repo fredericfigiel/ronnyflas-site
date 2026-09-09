@@ -23,15 +23,16 @@ record:
     - key: Thai boxing
       sub: World champion
       body_html: |-
-        <ul class="chips"><li>ISKA World Champion. 
+        <ul class="chips"><li>ISKA World Champion.</li></ul> 
 
-        Muay Thai pioneer in Belgium.</li></ul>
+        <ul class="chips"><li>MUAY THAI PIONEER IN BELGIUM.</li></ul>
     - key: Karate full contact
       sub: Black belt 3rd degree
-      body_html: |-
-        <ul class="chips"><li>First Karate teacher: Salvatore Scarlata. 
+      body_html: >-
+        <ul class="chips"><li>First Karate teacher: Salvatore
+        Scarlata.</li></ul>
 
-        Main trainer : Howard Brown (World Champions trainer)</li></ul>
+         <ul class="chips"><li>Main trainer : Howard Brown (World Champions trainer).</li></ul>
     - key: Kung Fu Wing Chun
       sub: Good experience
       multiline: true
@@ -52,8 +53,12 @@ coaching:
         champions</li><li>Belgian champions</li></ul>
     - key: Promoter
       sub: ""
-      body_html: <ul class="chips"><li>Promoter of the first biggest international
-        event of Muay Thai in Belgium.</li></ul>
+      body_html: >-
+        <ul class="chips"><li>Promoter of the first biggest international event
+        of Muay Thai in Belgium.</li></ul>
+
+
+        <ul class="chips"><li>Promoter of "LIVE BACK TO THAILAND AND JAPAN BY SATELITE</li></ul>
     - key: Personal trainer for
       sub: ""
       body_html: <ul class="chips"><li>VIP's & celebrities</li><li>Belgian
