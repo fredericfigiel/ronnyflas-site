@@ -25,8 +25,7 @@ items:
 gallery:
   eyebrow: In pictures
   title: Photos
-  photos:
-    - /assets/img/dee777_50fb8b9967fc4511b6604bd4587b9145~mv2.jpg
+  photos: []
 back_button:
   text: Back to Music
   href: /music/
