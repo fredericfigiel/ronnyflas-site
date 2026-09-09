@@ -1,14 +1,14 @@
 # Page: /music-consulting/
 meta:
   title: "Music Consulting - Ronny Flas"
-  description: "Music consulting for singers, writers, composers, independant producers and publishers by Ronny Flas."
+  description: "Music consulting for singers, writers, composers, independent producers and publishers by Ronny Flas."
 
 pagehead:
   eyebrow: "Music industry professional"
   title: "Music Consulting"
-  lede: "Ronny Flas offers a consulting service to the singers, writers, composers, independant producers, publishers for all advice regarding signatures and contracts."
+  lede: "Ronny Flas offers a consulting service to the singers, writers, composers, independent producers, publishers for all advice regarding signatures and contracts."
 
 body:
-  lede: 'He has an irreprochable "know how" as well as a wide address book.'
-  paragraph: "It is important that every person is advised properly and professionally in order to avoid any mistake than can cost a lot in the future."
+  lede: 'He has an irreproachable "know how" as well as a wide address book.'
+  paragraph: "It is important that every person is advised properly and professionally in order to avoid any mistake that can cost a lot in the future."
   closing_html: 'Don''t hesitate to contact us <a class="mailto" href="/contact/">HERE</a> to ask any information regarding our consulting skills. You will be impressed and satisfied.'
