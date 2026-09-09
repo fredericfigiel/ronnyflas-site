@@ -456,6 +456,7 @@
     var studios = d.studios || {};
     var fairs = d.fairs || {};
     var artists = d.artists || {};
+    var vp = d.video_producer || {};
 
     function photoBlock(photos) {
       photos = photos || [];
@@ -477,6 +478,20 @@
     var buttonsHtml = (artists.buttons || [])
       .map(function (b) { return '<a class="btn" href="' + (b.href || "#") + '">' + (b.text || "") + "</a>"; })
       .join(" &nbsp; ");
+
+    var videoProducerHtml = vp.heading
+      ? (
+          '\n<section>\n  <div class="wrap">\n' +
+          (vp.eyebrow ? '    <p class="eyebrow">' + vp.eyebrow + "</p>\n" : "") +
+          "    <h2>" +
+          vp.heading +
+          "</h2>\n" +
+          (vp.lede ? '    <p class="lede">' + mdRender(vp.lede, true) + "</p>\n" : "") +
+          "    " +
+          photoBlock(vp.photos) +
+          "\n  </div>\n</section>\n"
+        )
+      : "";
 
     return (
       pageheadHtml(ph.eyebrow, ph.title, ph.lede) +
@@ -513,7 +528,8 @@
       chipBlock(artists) +
       '\n    </div>\n    <p style="margin-top:26px">' +
       buttonsHtml +
-      "</p>\n  </div>\n</section>\n"
+      "</p>\n  </div>\n</section>\n" +
+      videoProducerHtml
     );
   }
 
@@ -529,6 +545,7 @@
           "Studios d'enregistrement",
           "Salons professionnels",
           "Artistes / pays",
+          "Music Video Producer",
         ]);
       },
     })

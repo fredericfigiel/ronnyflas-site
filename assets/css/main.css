@@ -89,7 +89,7 @@
     max-width:var(--maxw); margin:0 auto; padding:64px 24px 56px;
   }
   .name{
-    font-family:var(--display); font-weight:800; text-transform:uppercase;
+    font-family:var(--display); font-weight:700; text-transform:uppercase;
     font-size:clamp(58px,9.5vw,124px); line-height:.82; margin:0;
   }
   .name .last{color:var(--red); display:block}
