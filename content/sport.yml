@@ -17,6 +17,21 @@ record:
   eyebrow: Disciplines
   heading: Fighting record
   specs:
+    - key: Kick boxing
+      sub: World champion
+      body_html: <ul class="chips"><li>ISKA World Champion.</li></ul>
+    - key: Thai boxing
+      sub: World champion
+      body_html: |-
+        <ul class="chips"><li>ISKA World Champion. 
+
+        Muay Thai pioneer in Belgium.</li></ul>
+    - key: Karate full contact
+      sub: Black belt 3rd degree
+      body_html: |-
+        <ul class="chips"><li>First Karate teacher: Salvatore Scarlata. 
+
+        Main trainer : Howard Brown (World Champions trainer)</li></ul>
     - key: Kung Fu Wing Chun
       sub: Good experience
       multiline: true
@@ -26,19 +41,6 @@ record:
                     <li>Trained with Hawking Cheung in Los Angeles</li>
                     <li>Ronny Flas teached Brandon Lee (son of Bruce Lee and main character of the movie “The Crow”) his first low kick at the Dany Innocento Academy (Los Angeles) !!!</li>
                   </ul>
-    - key: Karate full contact
-      sub: Black belt 3rd degree
-      body_html: |-
-        <ul class="chips"><li>First Karate teacher: Salvatore Scarlata. 
-
-        Main trainer : Howard Brown (World Champions trainer)</li></ul>
-    - key: Kick boxing
-      sub: World champion
-      body_html: <ul class="chips"><li>ISKA World Champion.</li></ul>
-    - key: Thai boxing
-      sub: World champion
-      body_html: <ul class="chips"><li>ISKA World Champion. Muay Thai pioneer in
-        Belgium.</li></ul>
 coaching:
   eyebrow: Coaching
   heading: Trainer & promoter
