@@ -151,6 +151,9 @@ gallery:
     - file: /assets/img/ronny-4.jpg
       alt: Ronny Flas, his trainer Howard Brown and his best friend Simon (RIP)
       caption: Ronny Flas, his trainer Howard Brown and his best friend Simon (RIP)
+    - file: /assets/img/h-brown.jpg
+      alt: Ronny Flas and his trainer Howard Brown
+      caption: Ronny Flas and his trainer Howard Brown
     - file: /assets/img/img_0464.jpg
       caption: During his last stay in Thailand, Ronny Flas met his friend, the
         legendary undefeated Thai Boxing champion Krongsak. On the left of the
@@ -158,9 +161,6 @@ gallery:
         belgian doctor specialised in sports who takes care of a lot of World
         champions and Olympic champions.
       alt: Krongsak and Dr Jean Louis Cabay
-    - file: /assets/img/h-brown.jpg
-      alt: Ronny Flas and his trainer Howard Brown
-      caption: Ronny Flas and his trainer Howard Brown
     - file: /assets/img/kick-boxing-trainer-diploma.png
       alt: Kick Boxing trainer diploma
       caption: Kick Boxing trainer diploma
