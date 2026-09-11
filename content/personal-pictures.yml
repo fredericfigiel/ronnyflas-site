@@ -72,9 +72,6 @@ pictures:
   - file: /assets/img/dee777_d0ec407841564b74814d822b6caa6a88~mv2_d_1440_1920_s_2.jpg
     title: Vespa
     desc: What better than a Vespa ?! I love my Vespa
-  - file: /assets/img/ronny-flas-and-david-foster.png
-    title: David Foster
-    desc: Ronny Flas with David Foster and Jennifer McCray
   - file: /assets/img/dee777_6f3dd9e192de4636a02677d559d14225.jpg
     title: UFC
     desc: "Ronny Flas at the UFC World title fight: George Saint Pierre versus
@@ -93,9 +90,18 @@ pictures:
     desc: Ronny Flas and legendary Thai Boxing Champion Krongsak in Paris at the
       famous "Café/restaurant de la Paix" talking about their common project in
       Thailand.
+  - file: /assets/img/dee777_5c376d2bae99735476bb6394520769fb.jpg
+    title: Ronny and Micheline
+    desc: The Power Couple
+  - file: /assets/img/shaggy-1.jpg
+    title: RONNY FLAS AND SHAGGY AT MIDEM MIAMI
+    desc: RONNY FLAS AND SHAGGY AT MIDEM MIAMI
   - file: /assets/img/dee777_6e857a8f32d96b5599b3081ca569b489.jpg
     title: Ronny and Shaggy
     desc: Ronny Flas and Shaggy at Midem Miami
+  - file: /assets/img/ronny-flas-and-david-foster.png
+    title: David Foster
+    desc: Ronny Flas with David Foster and Jennifer McCray
   - file: /assets/img/dee777_8ff690403b96a9aa944b1970c052aaea.jpg
     title: Ronny Flas and HRH King Philippe I
     desc: Ronny Flas meeting HRH King Philippe I of Belgium during an international
@@ -105,6 +111,3 @@ pictures:
     desc: Ronny Flas was extremely happy and honored to have been invited personally
       by the reverend Jesse Jackson for his 72nd birthday party at the Beverly
       Hotel.
-  - file: /assets/img/dee777_5c376d2bae99735476bb6394520769fb.jpg
-    title: Ronny and Micheline
-    desc: The Power Couple
