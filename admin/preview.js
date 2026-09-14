@@ -261,15 +261,15 @@
         var style = x.photo_style ? ' style="' + x.photo_style + '"' : "";
         var facts = (x.facts || []).map(function (f) { return "<li>" + f + "</li>"; }).join("\n");
         return (
-          '<article class="domain"><div class="shot"><img loading="lazy" src="' +
+          '<article class="domain"><h3>' +
+          (x.title || "") +
+          '</h3><div class="shot"><img loading="lazy" src="' +
           asset(x.photo) +
           '" alt="' +
           (x.photo_alt || "") +
           '"' +
           style +
-          '></div><div class="domain-body"><h3>' +
-          (x.title || "") +
-          "</h3><p>" +
+          '></div><div class="domain-body"><p>' +
           (x.desc || "") +
           '</p><ul class="facts">' +
           facts +
@@ -289,7 +289,13 @@
       heroPhotos +
       '\n    </div>\n    <ul class="roles">\n' +
       roles +
-      '\n    </ul>\n  </div>\n</header>\n\n<section class="alerts">\n  <div class="wrap">\n    <div class="alerts-head">\n      <p class="eyebrow" style="margin:0">' +
+      '\n    </ul>\n  </div>\n</header>\n\n<section>\n  <div class="wrap">\n    <p class="eyebrow">' +
+      (sections.eyebrow || "") +
+      "</p>\n    <h2>" +
+      (sections.heading || "") +
+      '</h2>\n\n    <div class="domains">\n' +
+      domains +
+      '\n    </div>\n  </div>\n</section>\n\n<section class="alerts">\n  <div class="wrap">\n    <div class="alerts-head">\n      <p class="eyebrow" style="margin:0">' +
       (latest.eyebrow || "") +
       "</p>\n      <h2>" +
       (latest.heading || "") +
@@ -303,13 +309,7 @@
       (latest.button_href || "#") +
       '">' +
       (latest.button_text || "") +
-      '</a>\n    </article>\n  </div>\n</section>\n\n<section>\n  <div class="wrap">\n    <p class="eyebrow">' +
-      (sections.eyebrow || "") +
-      "</p>\n    <h2>" +
-      (sections.heading || "") +
-      '</h2>\n\n    <div class="domains">\n' +
-      domains +
-      '\n    </div>\n  </div>\n</section>\n\n<section class="contact">\n  <div class="wrap">\n    <p class="eyebrow">' +
+      '</a>\n    </article>\n  </div>\n</section>\n\n<section class="contact">\n  <div class="wrap">\n    <p class="eyebrow">' +
       mdRender(contact.eyebrow_html, true) +
       "</p>\n    <h2>" +
       (contact.heading || "") +
@@ -332,8 +332,8 @@
         var d = toData(this.props.entry);
         return frame(safe(function () { return homeBody(d); }), [
           "En-tête (photo + accroche)",
-          'Bloc "Latest" (actualité en avant)',
           'Section "Sport · Music · Food Business · Charity"',
+          'Bloc "Latest" (actualité en avant)',
           "Bloc Contact (bas de page d'accueil)",
         ]);
       },

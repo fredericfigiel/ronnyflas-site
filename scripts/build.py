@@ -300,9 +300,9 @@ def build_home():
     alert_paras = "\n".join(f"      <p>{md(p, inline=True)}</p>" for p in d["latest"]["alert_paragraphs"])
     domains = "\n\n".join(
         f"""      <article class="domain">
+        <h3>{x['title']}</h3>
         <div class="shot"><img loading="lazy" src="{IMG(x['photo'])}" alt="{x['photo_alt']}"{f' style="{x["photo_style"]}"' if x.get('photo_style') else ''}></div>
         <div class="domain-body">
-          <h3>{x['title']}</h3>
           <p>{x['desc']}</p>
           <ul class="facts">
 {chr(10).join(f'            <li>{fact}</li>' for fact in x['facts'])}
@@ -326,6 +326,17 @@ def build_home():
   </div>
 </header>
 
+<section>
+  <div class="wrap">
+    <p class="eyebrow">{d['sections']['eyebrow']}</p>
+    <h2>{d['sections']['heading']}</h2>
+
+    <div class="domains">
+{domains}
+    </div>
+  </div>
+</section>
+
 <section class="alerts">
   <div class="wrap">
     <div class="alerts-head">
@@ -338,17 +349,6 @@ def build_home():
 {alert_paras}
       <a class="btn" href="{d['latest']['button_href']}">{d['latest']['button_text']}</a>
     </article>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <p class="eyebrow">{d['sections']['eyebrow']}</p>
-    <h2>{d['sections']['heading']}</h2>
-
-    <div class="domains">
-{domains}
-    </div>
   </div>
 </section>
 
