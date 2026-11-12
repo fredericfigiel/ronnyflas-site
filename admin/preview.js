@@ -112,8 +112,13 @@
    * on purpose for the preview - plain text is fine here). */
   function feedHtml(items) {
     items = items || [];
-    var out = items.map(function (item) {
-      return "<p>" + esc(item).replace(/\n/g, "<br>") + "</p>";
+    var out = [];
+    items.forEach(function (item) {
+      var isObj = item && typeof item === "object";
+      var text = isObj ? item.text || "" : item;
+      var video = isObj ? item.video_url : null;
+      out.push("<p>" + esc(text).replace(/\n/g, "<br>") + "</p>");
+      if (video) out.push(youtubeEmbed(video));
     });
     return '<div class="newsfeed">\n' + out.join("\n") + "\n</div>";
   }

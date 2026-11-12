@@ -848,14 +848,19 @@ collections:
     - label: Actualités (une entrée = un encart)
       name: items
       widget: list
-      summary: '{{fields.item | truncate(70)}}'
+      summary: '{{fields.text | truncate(70)}}'
       collapsed: true
-      field:
-        label: Actualité
-        name: item
+      fields:
+      - label: Texte
+        name: text
         widget: text
         hint: Vous pouvez aller à la ligne dans le texte ; les liens/emails connus sont transformés automatiquement
           en liens cliquables.
+      - label: Vidéo YouTube (optionnel, affichée juste en dessous de ce texte)
+        name: video_url
+        widget: string
+        required: false
+        hint: Collez le lien complet de la vidéo YouTube (ex. https://www.youtube.com/watch?v=...)
     - label: Galerie photo
       name: gallery
       widget: object
