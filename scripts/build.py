@@ -169,10 +169,16 @@ def linkify(escaped_text):
 def feed_html(items):
     out = []
     for item in items:
-        escaped = html.escape(item, quote=False)
+        if isinstance(item, dict):
+            text, video = item.get("text", ""), item.get("video_url")
+        else:
+            text, video = item, None
+        escaped = html.escape(text, quote=False)
         escaped = linkify(escaped)
         escaped = escaped.replace("\n", "<br>")
         out.append(f"<p>{escaped}</p>")
+        if video:
+            out.append(youtube_embed(video))
     return '<div class="newsfeed">\n' + "\n".join(out) + "\n</div>"
 
 
